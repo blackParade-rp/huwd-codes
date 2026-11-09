@@ -562,4 +562,26 @@
 .huwd-search__plot-meta .huwd-search__field { padding: 8px 10px; }
 .huwd-search__footer { margin-top: 16px; padding-top: 11px; border-top: 1px solid var(--campus-border); color: var(--campus-muted); font: 700 9px var(--campus-mono-font); letter-spacing: .7px; text-align: right; }
 
+/* ==========================================
+   HUWD · ALINEACIÓN BÚSQUEDA DE PERSONAJE
+   ========================================== */
 
+.huwd-search__identity {
+    align-items: stretch;
+}
+
+.huwd-search__portrait {
+    height: 100%;
+    min-height: 0;
+}
+
+.huwd-search__portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.huwd-search__details {
+    align-content: stretch;
+    grid-auto-rows: minmax(0, 1fr);
+}
