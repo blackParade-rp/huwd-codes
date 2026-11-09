@@ -571,68 +571,54 @@
   font-size:17px;
 }
 
-.huwd-rewards__grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:12px;
+
+/* ==========================================
+   HUWD · MEDALLAS Y REGALOS
+   CUADRÍCULA DE TRES COLUMNAS
+   ========================================== */
+
+.huwd-rewards .huwd-rewards__grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    align-items: stretch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.huwd-rewards__card {
-  min-width:0;
-  padding:12px;
-  background:var(--campus-soft);
-  border:1px solid var(--campus-border);
-  border-radius:9px;
-  text-align:center;
-  transition:transform .2s ease;
+/* Cada medalla o regalo ocupa una celda */
+.huwd-rewards .huwd-rewards__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 12px;
+    text-align: center;
 }
 
-.huwd-rewards__card:hover {
-  transform:translateY(-3px);
+/* Imágenes uniformes */
+.huwd-rewards .huwd-rewards__image {
+    flex-shrink: 0;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 10px;
 }
 
-.huwd-rewards__image {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:110px;
-  height:110px;
-  max-width:100%;
-  margin:0 auto 10px;
-  padding:5px;
-  background:var(--campus-surface);
-  border:1px solid var(--campus-border);
-  border-radius:8px;
+.huwd-rewards .huwd-rewards__image img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
-.huwd-rewards__image img {
-  display:block;
-  width:100px;
-  height:100px;
-  max-width:100%;
-  object-fit:contain;
+/* Ocultar saltos automáticos del editor */
+.huwd-rewards__grid > br {
+    display: none !important;
 }
 
-.huwd-rewards__name {
-  margin-bottom:6px;
-  color:var(--campus-accent);
-  font:700 13px var(--campus-body-font);
-}
-
-.huwd-rewards__desc {
-  color:var(--campus-text);
-  font:11px/1.5 var(--campus-body-font);
-}
-
-.huwd-rewards__footer {
-  margin-top:18px;
-  padding-top:12px;
-  border-top:1px solid var(--campus-border);
-  color:var(--campus-muted);
-  font:700 9px var(--campus-mono-font);
-  text-align:right;
-  letter-spacing:1px;
-}
 
 /* HUWD · REGISTROS GENERALES */
 .huwd-registry {
