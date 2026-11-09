@@ -149,3 +149,330 @@
 @media (max-width: 400px) { .huwd-phone { width: min(100%, 340px); padding: 7px; border-radius: 32px; } .huwd-phone__screen { min-height: 560px; } .huwd-phone__clock { font-size: 56px; } }
 @media (prefers-reduced-motion: reduce) { .huwd-phone__lock, .huwd-phone__unlocked { transition: none; } }
 /* UCLA Social */
+
+/* HUWD · INSTAGRAM | Estilos compartidos */
+.huwd-ig {
+    --ig-accent: var(--campus-post-group, var(--season-primary, #2774AE));
+    --ig-surface: var(--campus-surface, #fff);
+    --ig-bg: var(--campus-bg, #f2f6fa);
+    --ig-text: var(--campus-text, #243447);
+    --ig-muted: var(--campus-muted, #728397);
+    --ig-border: var(--campus-border, #dce5ee);
+    width: min(100%, 680px);
+    margin: 14px auto;
+    padding: 16px;
+    box-sizing: border-box;
+    border: 1px solid var(--ig-border);
+    border-radius: 14px;
+    background: var(--ig-surface);
+    color: var(--ig-text);
+    font: 12px/1.55 var(--campus-body-font, Verdana, sans-serif);
+    overflow: hidden
+}
+
+.huwd-ig * {
+    box-sizing: border-box
+}
+
+.huwd-ig a {
+    color: var(--ig-accent);
+    text-decoration: none
+}
+
+.huwd-ig a:hover {
+    text-decoration: underline
+}
+
+.huwd-ig__brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 0 0 12px;
+    border-bottom: 1px solid var(--ig-border);
+    margin-bottom: 14px
+}
+
+.huwd-ig__logo {
+    font: 26px/1.1 var(--campus-title-font, 'Back to Black', cursive);
+    color: var(--ig-accent)
+}
+
+.huwd-ig__brand-icons {
+    display: flex;
+    gap: 14px;
+    color: var(--ig-accent);
+    font-size: 16px
+}
+
+.huwd-ig__avatar {
+    width: 44px;
+    height: 44px;
+    flex: none;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--ig-bg);
+    border: 2px solid var(--ig-accent)
+}
+
+.huwd-ig__avatar--large {
+    width: 108px;
+    height: 108px;
+    border-width: 3px
+}
+
+.huwd-ig__profile {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 14px
+}
+
+.huwd-ig__profile-info {
+    min-width: 0;
+    flex: 1
+}
+
+.huwd-ig__handle {
+    font: 700 17px/1.3 var(--campus-mono-font, Consolas, monospace);
+    overflow-wrap: anywhere
+}
+
+.huwd-ig__name {
+    font-weight: 700;
+    margin-top: 4px
+}
+
+.huwd-ig__bio {
+    margin: 5px 0 0;
+    white-space: pre-line
+}
+
+.huwd-ig__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    text-align: center;
+    border-block: 1px solid var(--ig-border);
+    padding: 11px 0;
+    margin: 12px 0
+}
+
+.huwd-ig__stats b {
+    display: block;
+    font-size: 14px;
+    color: var(--ig-accent)
+}
+
+.huwd-ig__stats span {
+    font-size: 10px;
+    color: var(--ig-muted)
+}
+
+.huwd-ig__section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: var(--ig-accent);
+    font: 700 10px var(--campus-mono-font, Consolas, monospace);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin: 16px 0 10px
+}
+
+.huwd-ig__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px
+}
+
+.huwd-ig__grid a {
+    display: block;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--ig-bg);
+    border-radius: 4px
+}
+
+.huwd-ig__grid img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .2s
+}
+
+.huwd-ig__grid a:hover img {
+    transform: scale(1.05)
+}
+
+.huwd-ig__user {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0
+}
+
+.huwd-ig__user-info {
+    min-width: 0;
+    flex: 1
+}
+
+.huwd-ig__username {
+    font-weight: 700;
+    overflow-wrap: anywhere
+}
+
+.huwd-ig__sub {
+    font-size: 10px;
+    color: var(--ig-muted)
+}
+
+.huwd-ig__post-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 11px
+}
+
+.huwd-ig__post-image {
+    display: block;
+    width: 100%;
+    max-height: 620px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    background: var(--ig-bg);
+    border: 1px solid var(--ig-border);
+    border-radius: 8px
+}
+
+.huwd-ig__actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--ig-accent);
+    font-size: 18px;
+    margin: 10px 0 6px
+}
+
+.huwd-ig__actions .huwd-ig__save {
+    margin-left: auto
+}
+
+.huwd-ig__likes {
+    font-weight: 700;
+    font-size: 11px
+}
+
+.huwd-ig__caption {
+    margin: 6px 0;
+    overflow-wrap: anywhere
+}
+
+.huwd-ig__date {
+    font: 9px var(--campus-mono-font, Consolas, monospace);
+    color: var(--ig-muted);
+    text-transform: uppercase;
+    margin-top: 9px
+}
+
+.huwd-ig__divider {
+    height: 1px;
+    background: var(--ig-border);
+    margin: 13px 0
+}
+
+.huwd-ig__comment {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    margin: 12px 0
+}
+
+.huwd-ig__comment-content {
+    flex: 1;
+    min-width: 0
+}
+
+.huwd-ig__comment-text {
+    overflow-wrap: anywhere
+}
+
+.huwd-ig__comment-meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 3px;
+    font: 10px var(--campus-mono-font, Consolas, monospace);
+    color: var(--ig-muted)
+}
+
+.huwd-ig__comment-heart {
+    color: var(--ig-accent);
+    font-size: 12px;
+    margin-left: auto
+}
+
+.huwd-ig__compose {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    border-top: 1px solid var(--ig-border);
+    padding-top: 11px;
+    color: var(--ig-muted);
+    font-size: 11px
+}
+
+.huwd-ig__compose strong {
+    color: var(--ig-accent)
+}
+
+.huwd-ig__follow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px;
+    background: var(--ig-bg);
+    border: 1px solid var(--ig-border);
+    border-radius: 9px
+}
+
+.huwd-ig__follow-text {
+    flex: 1;
+    min-width: 0
+}
+
+.huwd-ig__follow-text strong {
+    color: var(--ig-accent)
+}
+
+.huwd-ig__follow-action {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: var(--ig-accent);
+    color: var(--campus-post-ink, #fff) !important;
+    font: 700 10px var(--campus-mono-font, Consolas, monospace)
+}
+
+.huwd-ig__note {
+    margin-top: 12px;
+    font-size: 10px;
+    color: var(--ig-muted);
+    text-align: center
+}
+
+.huwd-ig__feed {
+    display: grid;
+    gap: 15px
+}
+
+.huwd-ig__feed-item {
+    padding: 12px;
+    border: 1px solid var(--ig-border);
+    border-radius: 10px;
+    background: var(--ig-surface)
+}
+
