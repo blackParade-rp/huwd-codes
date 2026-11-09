@@ -422,3 +422,42 @@
     position: relative;
     top: -2px;
 }
+
+/* ==========================================
+   HUWD · EDITORIAL
+   IMAGEN FIJA CON DEGRADADO INFERIOR
+   ========================================== */
+
+/* Fondo de la columna fotográfica */
+.huwd-role--editorial .huwd-role__side {
+    position: relative;
+    min-height: 0;
+    background: var(--role-soft);
+    overflow: hidden;
+}
+
+/* Fotografía con altura fija */
+.huwd-role--editorial .huwd-role__side img {
+    position: relative;
+    inset: auto;
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center top;
+
+    /* Degradado hacia el fondo */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 65%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 65%,
+        transparent 100%
+    );
+}
+
