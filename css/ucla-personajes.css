@@ -365,18 +365,6 @@
     text-align: right;
 }
 
-/* Adaptación a pantallas estrechas */
-@media (max-width: 700px) {
-    .huwd-academic__identity { grid-template-columns: 1fr; }
-    .huwd-academic__portrait { margin: 0 auto; }
-}
-@media (max-width: 420px) {
-    .huwd-academic { padding: 12px; }
-    .huwd-academic__header { padding: 14px; }
-    .huwd-academic__details { grid-template-columns: 1fr; }
-    .huwd-academic__details--five .huwd-academic__field:last-child { grid-column: auto; }
-}
-
 /* ==========================================
    03. REGISTRO DE CLASES Y ACTIVIDADES
    ========================================== */
@@ -511,12 +499,67 @@
     color: var(--huwd-academic-ink) !important;
 }
 
-@media (max-width: 600px) {
-    .huwd-academic__activity-grid {
-        grid-template-columns: 1fr;
-    }
+/* ==========================================
+   HUWD · BÚSQUEDAS DE PERSONAJES Y TRAMAS
+   ========================================== */
 
-    .huwd-academic__activity-box--full {
-        grid-column: auto;
-    }
+.huwd-search {
+    --huwd-search-accent: var(--campus-post-group, var(--season-primary));
+    --huwd-search-ink: var(--campus-post-ink, var(--campus-contrast));
+    --huwd-search-soft: color-mix(in srgb, var(--huwd-search-accent) 9%, var(--campus-surface));
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 18px;
+    box-sizing: border-box;
+    border: 1px solid var(--campus-border);
+    border-radius: 12px;
+    background: var(--campus-surface);
+    color: var(--campus-text);
+    font: 12px/1.7 var(--campus-body-font);
 }
+.huwd-search *, .huwd-search *::before, .huwd-search *::after { box-sizing: border-box; }
+.huwd-search__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 18px 20px;
+    border-radius: 9px;
+    background: var(--huwd-search-accent);
+    color: var(--huwd-search-ink);
+}
+.huwd-search__eyebrow { display: block; margin-bottom: 4px; font: 700 9px/1.5 var(--campus-mono-font); letter-spacing: 1px; }
+.huwd-search__title { font: 400 clamp(27px, 4vw, 40px)/1.2 var(--campus-title-font); color: inherit; }
+.huwd-search__subtitle { display: block; margin-top: 5px; font: 10px/1.5 var(--campus-mono-font); }
+.huwd-search__symbol { flex: 0 0 auto; font-size: 26px; opacity: .85; }
+.huwd-search__intro { margin-bottom: 16px; padding: 11px 14px; background: var(--huwd-search-soft); border-left: 3px solid var(--huwd-search-accent); border-radius: 0 7px 7px 0; }
+.huwd-search__intro p, .huwd-search__text p { margin: 0 0 9px; }
+.huwd-search__intro p:last-child, .huwd-search__text p:last-child { margin-bottom: 0; }
+.huwd-search__heading { display: flex; align-items: center; gap: 9px; margin: 0 0 11px; padding-bottom: 8px; border-bottom: 1px solid var(--campus-border); }
+.huwd-search__heading-number { display: inline-flex; justify-content: center; align-items: center; flex: 0 0 auto; min-width: 27px; height: 21px; padding: 0 5px; border-radius: 4px; background: var(--huwd-search-accent); color: var(--huwd-search-ink); font: 700 10px var(--campus-mono-font); }
+.huwd-search__heading-title { margin: 0; color: var(--campus-text); font: 700 13px/1.4 var(--campus-body-font); }
+.huwd-search__panel { min-width: 0; margin-bottom: 15px; padding: 14px; border: 1px solid var(--campus-border); border-radius: 9px; background: var(--campus-surface); }
+.huwd-search__panel:last-child { margin-bottom: 0; }
+.huwd-search__text { color: var(--campus-text); font: 12px/1.8 var(--campus-body-font); text-align: justify; overflow-wrap: anywhere; }
+.huwd-search__person { display: grid; grid-template-columns: 220px minmax(0,1fr); align-items: start; gap: 16px; margin-bottom: 16px; }
+.huwd-search__portrait { width: 220px; height: 290px; overflow: hidden; border: 3px solid var(--huwd-search-accent); border-radius: 9px; background: var(--huwd-search-soft); }
+.huwd-search__portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.huwd-search__person-data { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+.huwd-search__field { min-width: 0; padding: 10px 11px; border: 1px solid var(--campus-border); border-radius: 6px; background: var(--huwd-search-soft); }
+.huwd-search__field--full { grid-column: 1/-1; }
+.huwd-search__field-label { display: block; margin-bottom: 3px; color: var(--campus-muted); font: 700 9px/1.4 var(--campus-mono-font); text-transform: uppercase; }
+.huwd-search__field-value { display: block; color: var(--campus-text); font: 700 11px/1.5 var(--campus-body-font); overflow-wrap: anywhere; }
+.huwd-search__note { margin-top: 12px; padding: 10px 12px; border-left: 3px solid var(--huwd-search-accent); border-radius: 0 6px 6px 0; background: var(--huwd-search-soft); }
+.huwd-search__plots { display: grid; grid-template-columns: 1fr; gap: 13px; }
+.huwd-search__plot { min-width: 0; padding: 15px; border: 1px solid var(--campus-border); border-radius: 9px; background: var(--campus-surface); }
+.huwd-search__plot-top { display: flex; align-items: start; justify-content: space-between; gap: 10px; padding-bottom: 11px; margin-bottom: 11px; border-bottom: 1px solid var(--campus-border); }
+.huwd-search__plot-kicker { display: block; margin-bottom: 4px; color: var(--huwd-search-accent); font: 700 9px var(--campus-mono-font); text-transform: uppercase; letter-spacing: .7px; }
+.huwd-search__plot-title { margin: 0; color: var(--campus-text); font: 400 25px/1.25 var(--campus-accent-font); }
+.huwd-search__status { display: inline-block; flex: 0 0 auto; padding: 5px 8px; border: 1px solid var(--huwd-search-accent); border-radius: 5px; color: var(--huwd-search-accent); background: var(--huwd-search-soft); font: 700 9px/1.4 var(--campus-mono-font); text-transform: uppercase; }
+.huwd-search__plot-meta { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; margin-top: 12px; }
+.huwd-search__plot-meta .huwd-search__field { padding: 8px 10px; }
+.huwd-search__footer { margin-top: 16px; padding-top: 11px; border-top: 1px solid var(--campus-border); color: var(--campus-muted); font: 700 9px var(--campus-mono-font); letter-spacing: .7px; text-align: right; }
+
+
