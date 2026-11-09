@@ -1,1 +1,58 @@
-/* UCLA — Sistema de tablillas */
+/* HUWD · UCLA | TABLILLAS GENERALES · v1.0
+   GitHub: css/ucla-tablillas.css
+   Variables heredadas del tema; no define colores fijos de modo.
+*/
+.huwd-board,
+.huwd-board * { box-sizing: border-box; }
+.huwd-board {
+  --huwd-accent: var(--season-primary, #2774AE);
+  --huwd-ink: var(--campus-text, #243447);
+  --huwd-subtle: var(--campus-muted, #728397);
+  --huwd-panel: var(--campus-surface, #fff);
+  --huwd-line: var(--campus-border, #DCE5EE);
+  --huwd-on-accent: var(--campus-contrast, #fff);
+  --huwd-wash: color-mix(in srgb, var(--huwd-panel) 88%, transparent);
+  --huwd-tint: color-mix(in srgb, var(--huwd-accent) 10%, var(--huwd-panel));
+  width: 100%; max-width: 100%; margin: 18px auto;
+  padding: clamp(14px, 3vw, 26px);
+  color: var(--huwd-ink);
+  background: var(--huwd-wash);
+  border: 1px solid var(--huwd-line);
+  border-radius: 16px;
+  font: 13px/1.75 var(--campus-body-font, Verdana, sans-serif);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  overflow-wrap: anywhere;
+}
+.huwd-board a { color: var(--huwd-accent); text-decoration: none; }
+.huwd-board a:hover { text-decoration: underline; }
+.huwd-board__header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 17px 20px; margin-bottom: 18px;
+  background: var(--huwd-accent); color: var(--huwd-on-accent);
+  border-radius: 10px;
+}
+.huwd-board__eyebrow { display: block; margin-bottom: 4px; opacity: .85;
+  font: 700 10px/1.4 var(--campus-mono-font, monospace); letter-spacing: .12em; text-transform: uppercase; }
+.huwd-board__title { margin: 0; color: inherit; font: 400 clamp(26px, 4vw, 39px)/1.25 var(--campus-accent-font, cursive); }
+.huwd-board__mark { flex: 0 0 auto; font-size: 24px; line-height: 1; }
+.huwd-board__intro { margin: 0 0 18px; padding: 14px 16px; background: var(--huwd-tint); border-radius: 9px; }
+.huwd-board__intro p, .huwd-board__section p { margin: 0 0 10px; }
+.huwd-board__intro p:last-child, .huwd-board__section p:last-child { margin-bottom: 0; }
+.huwd-board__sections { display: grid; gap: 12px; }
+.huwd-board__section { padding: 16px; border: 1px solid var(--huwd-line); background: var(--huwd-wash); border-radius: 10px; }
+.huwd-board__section-head { display: flex; gap: 11px; align-items: center; margin-bottom: 10px; }
+.huwd-board__number { display: inline-flex; flex: 0 0 auto; justify-content: center; align-items: center;
+  min-width: 32px; height: 32px; padding: 0 6px; background: var(--huwd-accent); color: var(--huwd-on-accent);
+  border-radius: 7px; font: 700 11px var(--campus-mono-font, monospace); }
+.huwd-board__subtitle { margin: 0; color: var(--huwd-accent); font: 700 13px/1.4 var(--campus-mono-font, monospace); text-transform: uppercase; }
+.huwd-board__footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;
+  margin-top: 16px; padding-top: 13px; border-top: 1px solid var(--huwd-line); color: var(--huwd-subtle);
+  font: 11px/1.5 var(--campus-mono-font, monospace); }
+.huwd-board__links { display: flex; flex-wrap: wrap; gap: 8px 14px; }
+.huwd-board__links a { font-weight: 700; }
+@media (max-width: 580px) {
+  .huwd-board { padding: 12px; }
+  .huwd-board__header { padding: 14px; }
+  .huwd-board__section { padding: 13px; }
+}
