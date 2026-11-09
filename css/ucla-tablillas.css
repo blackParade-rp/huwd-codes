@@ -1128,3 +1128,17 @@
     color: var(--huwd-group-ink) !important;
     text-decoration: none !important;
 }
+
+/* ==========================================
+   HUWD · TIPOGRAFÍA DE LOS GRUPOS
+   ========================================== */
+
+.huwd-group .huwd-group__title {
+    font-family: var(--campus-accent-font, "Bright Holiday", cursive) !important;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--huwd-group-ink) !important;
+}
