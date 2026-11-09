@@ -1,0 +1,210 @@
+
+/* ==========================================
+   HUWD · FORMATOS ESPECIALES DE MENSAJES
+   Quote · Code · Spoiler · Hide
+   ========================================== */
+
+/* 01. VARIABLES COMPARTIDAS */
+
+.campus-post-card {
+    --huwd-block-accent: var(
+        --campus-post-group,
+        var(--season-primary)
+    );
+
+    --huwd-block-bg: var(--campus-surface);
+    --huwd-block-soft: var(--campus-soft);
+    --huwd-block-border: var(--campus-border);
+    --huwd-block-text: var(--campus-text);
+    --huwd-block-muted: var(--campus-muted);
+}
+
+/* 02. ESTILOS GENERALES */
+
+.campus-post-card .postbody .content blockquote,
+.campus-post-card .postbody .content .codebox,
+.campus-post-card .postbody .content .spoiler,
+.campus-post-card .postbody .content .hidecode {
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 12px 0;
+    border-radius: 8px;
+    color: var(--huwd-block-text);
+    font-family: var(--campus-body-font);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* 03. QUOTE */
+
+.campus-post-card .postbody .content blockquote {
+    position: relative;
+    padding: 17px 18px 15px 20px;
+    background: var(--huwd-block-soft);
+    border: 1px solid var(--huwd-block-border);
+    border-left: 4px solid var(--huwd-block-accent);
+    box-shadow: none;
+}
+
+.campus-post-card .postbody .content blockquote::before {
+    content: "\201C";
+    position: absolute;
+    top: 4px;
+    right: 12px;
+    color: var(--huwd-block-accent);
+    font: bold 35px/1 Georgia, serif;
+    opacity: .65;
+    pointer-events: none;
+}
+
+.campus-post-card .postbody .content blockquote cite,
+.campus-post-card .postbody .content blockquote .cite {
+    display: block;
+    margin: 0 28px 10px 0;
+    padding: 0 0 8px;
+    border-bottom: 1px solid var(--huwd-block-border);
+    color: var(--huwd-block-accent);
+    font: 700 10px/1.5 var(--campus-mono-font);
+}
+
+.campus-post-card .postbody .content blockquote > div {
+    color: var(--huwd-block-text);
+    background: transparent;
+}
+
+/* 04. CODE */
+
+.campus-post-card .postbody .content .codebox:not(.spoiler) {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    background: var(--huwd-block-bg);
+    border: 1px solid var(--huwd-block-border);
+    border-top: 3px solid var(--huwd-block-accent);
+    box-shadow: none;
+}
+
+.campus-post-card .postbody .content .codebox:not(.spoiler) dt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 40px;
+    margin: 0;
+    padding: 9px 12px;
+    background: var(--huwd-block-soft);
+    border: 0;
+    border-bottom: 1px solid var(--huwd-block-border);
+    color: var(--huwd-block-accent);
+    font: 700 10px/1.5 var(--campus-mono-font);
+    text-transform: uppercase;
+}
+
+.campus-post-card .postbody .content .codebox:not(.spoiler) dd {
+    margin: 0;
+    padding: 12px 14px;
+    background: var(--huwd-block-bg);
+    color: var(--huwd-block-text);
+    overflow-x: auto;
+}
+
+.campus-post-card .postbody .content .codebox:not(.spoiler) pre,
+.campus-post-card .postbody .content .codebox:not(.spoiler) code {
+    font: 11px/1.7 var(--campus-mono-font);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    background: transparent;
+    border: 0;
+}
+
+/* 05. BOTÓN COPIAR */
+
+.campus-post-card .postbody .content .huwd-copy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-shrink: 0;
+    padding: 5px 9px;
+    background: var(--huwd-block-bg);
+    color: var(--huwd-block-accent);
+    border: 1px solid var(--huwd-block-border);
+    border-radius: 5px;
+    font: 700 10px var(--campus-mono-font);
+    text-transform: none;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+.campus-post-card .postbody .content .huwd-copy-button:hover {
+    background: var(--huwd-block-soft);
+    border-color: var(--huwd-block-accent);
+}
+
+.campus-post-card .postbody .content .huwd-copy-button:focus-visible {
+    outline: 2px solid var(--huwd-block-accent);
+    outline-offset: 2px;
+}
+
+/* 06. SPOILER */
+
+.campus-post-card .postbody .content .spoiler {
+    overflow: hidden;
+    padding: 0;
+    background: var(--huwd-block-bg);
+    border: 1px solid var(--huwd-block-border);
+    border-left: 4px solid var(--huwd-block-accent);
+    box-shadow: none;
+}
+
+.campus-post-card .postbody .content .spoiler dt {
+    margin: 0;
+    padding: 11px 14px;
+    background: var(--huwd-block-soft);
+    color: var(--huwd-block-accent);
+    font: 700 11px/1.5 var(--campus-mono-font);
+    cursor: pointer;
+}
+
+.campus-post-card .postbody .content .spoiler dd {
+    margin: 0;
+    padding: 13px 15px;
+    background: var(--huwd-block-bg);
+    color: var(--huwd-block-text);
+    border-top: 1px solid var(--huwd-block-border);
+}
+
+/* 07. HIDE */
+
+.campus-post-card .postbody .content .hidecode {
+    padding: 13px 15px;
+    background: var(--huwd-block-soft);
+    border: 1px dashed var(--huwd-block-accent);
+    border-radius: 8px;
+}
+
+.campus-post-card .postbody .content .hidecode::before {
+    content: "CONTENIDO OCULTO";
+    display: block;
+    margin-bottom: 8px;
+    color: var(--huwd-block-accent);
+    font: 700 10px var(--campus-mono-font);
+    letter-spacing: 1px;
+}
+
+/* 08. AJUSTES MÓVILES */
+
+@media (max-width: 600px) {
+    .campus-post-card .postbody .content blockquote {
+        padding: 13px 14px;
+    }
+
+    .campus-post-card .postbody .content .codebox:not(.spoiler) dd {
+        padding: 10px;
+    }
+
+    .campus-post-card .postbody .content .huwd-copy-button {
+        padding: 5px 7px;
+        font-size: 9px;
+    }
+}
