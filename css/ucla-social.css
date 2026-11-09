@@ -1,1 +1,151 @@
+/* ==========================================
+   HUWD · MÓVIL Y MENSAJERÍA
+   ========================================== */
+.huwd-phone {
+    --phone-accent: var(--campus-post-group, var(--season-primary));
+    --phone-ink: var(--campus-post-ink, #191919);
+    --phone-panel: var(--campus-surface, #fff);
+    --phone-text: var(--campus-text, #243447);
+    --phone-muted: var(--campus-muted, #728397);
+    --phone-line: var(--campus-border, #dce5ee);
+    width: min(100%, 360px);
+    margin: 12px auto;
+    padding: 10px;
+    background: #15171b;
+    border: 2px solid #3b4049;
+    border-radius: 38px;
+    box-shadow: 0 16px 35px rgba(0,0,0,.18);
+    color: var(--phone-text);
+    font: 12px/1.55 var(--campus-body-font, Verdana, sans-serif);
+    box-sizing: border-box;
+}
+.huwd-phone *, .huwd-phone *::before, .huwd-phone *::after { box-sizing: border-box; }
+.huwd-phone__screen {
+    position: relative;
+    min-height: 590px;
+    overflow: hidden;
+    border-radius: 29px;
+    background: var(--phone-panel);
+    isolation: isolate;
+}
+.huwd-phone__island {
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    z-index: 9;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 22px;
+    background: #101115;
+    border-radius: 20px;
+}
+.huwd-phone__status {
+    position: absolute;
+    z-index: 8;
+    top: 12px;
+    left: 23px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font: 700 10px var(--campus-mono-font, Consolas, monospace);
+}
+.huwd-phone__status-icons { display: flex; gap: 7px; align-items: center; }
+.huwd-phone__homebar {
+    position: absolute;
+    z-index: 10;
+    bottom: 9px;
+    left: 50%;
+    width: 95px;
+    height: 4px;
+    transform: translateX(-50%);
+    border-radius: 6px;
+    background: currentColor;
+    opacity: .5;
+}
+/* Pantalla de bloqueo y desbloqueo */
+.huwd-phone--lock .huwd-phone__screen { color: #fff; background: #252c37; }
+.huwd-phone__lock,
+.huwd-phone__unlocked {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    transition: opacity .35s ease, transform .35s ease, visibility .35s ease;
+}
+.huwd-phone__lock {
+    padding: 60px 20px 38px;
+    background: linear-gradient(180deg,rgba(10,16,28,.34),rgba(10,16,28,.15) 42%,rgba(10,16,28,.68)),var(--phone-wallpaper, linear-gradient(135deg,#5279a0,#222e45));
+    background-size: cover;
+    background-position: center;
+}
+.huwd-phone__lock-date { text-align: center; font: 700 12px var(--campus-mono-font, Consolas, monospace); }
+.huwd-phone__clock { text-align: center; font: 400 65px/1.05 var(--campus-body-font, Verdana, sans-serif); letter-spacing: -4px; }
+.huwd-phone__notification {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 25px;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 13px;
+    background: rgba(15,22,35,.48);
+    backdrop-filter: blur(10px);
+}
+.huwd-phone__notification > i { font-size: 18px; }
+.huwd-phone__notification strong { display: block; font-size: 11px; }
+.huwd-phone__notification span { display: block; font-size: 10px; }
+.huwd-phone__swipe { margin-top: auto; text-align: center; font: 700 10px var(--campus-mono-font, Consolas, monospace); letter-spacing: .5px; }
+.huwd-phone__unlocked {
+    padding: 70px 22px 42px;
+    align-items: center;
+    background: var(--phone-panel);
+    color: var(--phone-text);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+}
+.huwd-phone--lock:hover .huwd-phone__lock,
+.huwd-phone--lock:focus-within .huwd-phone__lock { opacity: 0; visibility: hidden; transform: translateY(-16px); }
+.huwd-phone--lock:hover .huwd-phone__unlocked,
+.huwd-phone--lock:focus-within .huwd-phone__unlocked { opacity: 1; visibility: visible; transform: translateY(0); }
+.huwd-phone__unlock-control { position: absolute; z-index: 11; inset: 0; width: 100%; border: 0; background: transparent; cursor: pointer; color: transparent; }
+.huwd-phone--lock:focus-within .huwd-phone__unlock-control { pointer-events: none; }
+.huwd-phone__avatar {
+    width: 104px;
+    height: 104px;
+    border: 4px solid var(--phone-accent);
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--phone-line);
+}
+.huwd-phone__avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.huwd-phone__name { margin-top: 14px; text-align: center; font: 30px/1.25 var(--campus-title-font, cursive); }
+.huwd-phone__tagline { margin: 4px 0 20px; color: var(--phone-muted); text-align: center; font-size: 10px; }
+.huwd-phone__voicemail { width: 100%; padding: 14px; border: 1px solid var(--phone-line); border-left: 4px solid var(--phone-accent); border-radius: 10px; background: color-mix(in srgb,var(--phone-accent) 7%,var(--phone-panel)); }
+.huwd-phone__voicemail-label { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; color: var(--phone-accent); font: 700 10px var(--campus-mono-font, Consolas, monospace); text-transform: uppercase; }
+.huwd-phone__voicemail p { margin: 0; font-size: 11px; }
+.huwd-phone__apps { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: auto; padding-top: 22px; }
+.huwd-phone__app { display: flex; flex-direction: column; align-items: center; gap: 5px; min-width: 48px; color: var(--phone-text) !important; text-decoration: none !important; font: 9px var(--campus-mono-font, Consolas, monospace); }
+.huwd-phone__app i { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--phone-accent); color: var(--phone-ink); font-size: 18px; }
+/* Mensajería */
+.huwd-phone--chat .huwd-phone__screen { display: flex; flex-direction: column; padding-top: 42px; }
+.huwd-phone__chathead { display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-bottom: 1px solid var(--phone-line); background: var(--phone-panel); }
+.huwd-phone__back { color: var(--phone-accent); font-size: 17px; }
+.huwd-phone__contact-photo { width: 39px; height: 39px; border-radius: 50%; object-fit: cover; border: 2px solid var(--phone-accent); }
+.huwd-phone__contact-name { display: block; font-weight: 700; font-size: 12px; }
+.huwd-phone__contact-status { display: block; font-size: 9px; color: var(--phone-muted); }
+.huwd-phone__chathead-more { margin-left: auto; color: var(--phone-accent); }
+.huwd-phone__messages { flex: 1; display: flex; flex-direction: column; gap: 10px; padding: 17px 13px 18px; background: color-mix(in srgb,var(--phone-accent) 3%,var(--phone-panel)); }
+.huwd-phone__day { align-self: center; margin: 2px 0 8px; padding: 4px 10px; border-radius: 20px; color: var(--phone-muted); background: var(--phone-panel); font: 9px var(--campus-mono-font, Consolas, monospace); }
+.huwd-phone__message { max-width: 84%; display: flex; flex-direction: column; gap: 4px; padding: 9px 11px 7px; border-radius: 13px; font-size: 11px; overflow-wrap: anywhere; }
+.huwd-phone__message p { margin: 0; }
+.huwd-phone__message time { align-self: flex-end; font: 8px var(--campus-mono-font, Consolas, monospace); opacity: .7; }
+.huwd-phone__message--received { align-self: flex-start; border-bottom-left-radius: 3px; background: var(--phone-panel); border: 1px solid var(--phone-line); }
+.huwd-phone__message--sent { align-self: flex-end; border-bottom-right-radius: 3px; background: var(--phone-accent); color: var(--phone-ink); }
+.huwd-phone__composer { display: flex; align-items: center; gap: 10px; margin-top: auto; padding: 10px 13px 24px; border-top: 1px solid var(--phone-line); background: var(--phone-panel); color: var(--phone-accent); }
+.huwd-phone__composer-text { flex: 1; padding: 9px 12px; border: 1px solid var(--phone-line); border-radius: 22px; color: var(--phone-muted); font-size: 10px; }
+.huwd-phone__composer i { font-size: 17px; }
+@media (max-width: 400px) { .huwd-phone { width: min(100%, 340px); padding: 7px; border-radius: 32px; } .huwd-phone__screen { min-height: 560px; } .huwd-phone__clock { font-size: 56px; } }
+@media (prefers-reduced-motion: reduce) { .huwd-phone__lock, .huwd-phone__unlocked { transition: none; } }
 /* UCLA Social */
