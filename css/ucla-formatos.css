@@ -191,3 +191,12 @@
     font: 700 10px var(--campus-mono-font);
     letter-spacing: 1px;
 }
+/* ==========================================
+   HUWD · OCULTAR AVISO DE EDICIÓN
+   ========================================== */
+
+.campus-post-card .postbody .content .edit,
+.campus-post-card .postbody .content .edited,
+.campus-post-card .postbody .content .last-edited {
+    display: none !important;
+}
