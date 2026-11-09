@@ -51,3 +51,72 @@
   font: 11px/1.5 var(--campus-mono-font, monospace); }
 .huwd-board__links { display: flex; flex-wrap: wrap; gap: 8px 14px; }
 .huwd-board__links a { font-weight: 700; }
+
+
+/* =========================================
+   HUWD · TABLILLAS ADMINISTRATIVAS
+   AJUSTE DE ESPACIADO COMPACTO
+========================================= */
+
+/* Contenedor principal */
+.huwd-board {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Cabecera */
+.huwd-board__header {
+  margin: 0;
+  padding: 16px 20px;
+}
+
+/* Introducción */
+.huwd-board__intro {
+  margin: 0;
+  padding: 12px 16px;
+}
+
+/* Apartados */
+.huwd-board__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cada apartado */
+.huwd-board__section {
+  margin: 0;
+  padding: 14px 16px;
+}
+
+/* Cabecera de cada apartado */
+.huwd-board__section-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+}
+
+/* Párrafos */
+.huwd-board__intro p,
+.huwd-board__section p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Pie de la tablilla */
+.huwd-board__footer {
+  margin: 0;
+  padding: 12px 16px;
+}
+
+/* Evitar espacios añadidos por Foroactivo */
+.huwd-board > br,
+.huwd-board__sections > br {
+  display: none;
+}
+
