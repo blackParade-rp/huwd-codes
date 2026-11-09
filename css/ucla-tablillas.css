@@ -359,3 +359,154 @@
   min-height:0!important;
   aspect-ratio:auto!important;
 }
+
+
+/* HUWD · CRONOLOGÍA DE EVENTOS */
+
+.huwd-events {
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+  padding:18px;
+  box-sizing:border-box;
+  background:var(--campus-surface);
+  border:1px solid var(--campus-border);
+  border-radius:12px;
+  color:var(--campus-text);
+  font:12px/1.6 var(--campus-body-font);
+}
+
+.huwd-events * {
+  box-sizing:border-box;
+}
+
+.huwd-events__header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  padding:18px;
+  background:var(--season-primary);
+  color:var(--campus-contrast);
+  border-radius:9px;
+}
+
+.huwd-events__eyebrow {
+  display:block;
+  margin-bottom:5px;
+  font:700 10px var(--campus-mono-font);
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.huwd-events__title {
+  font:400 34px/1.2 var(--campus-accent-font);
+}
+
+.huwd-events__mark {
+  font-size:27px;
+}
+
+.huwd-events__intro {
+  margin:14px 0;
+  padding:12px 15px;
+  background:var(--campus-soft);
+  border-radius:8px;
+  font-size:12px;
+}
+
+.huwd-events__intro p,
+.huwd-events__item p {
+  margin:0;
+}
+
+.huwd-events__timeline {
+  position:relative;
+  display:grid;
+  gap:12px;
+  margin:18px 0 0 8px;
+  padding-left:22px;
+  border-left:2px solid var(--season-primary);
+}
+
+.huwd-events__item {
+  position:relative;
+  padding:14px;
+  background:var(--campus-soft);
+  border:1px solid var(--campus-border);
+  border-radius:8px;
+}
+
+.huwd-events__item::before {
+  content:"";
+  position:absolute;
+  top:20px;
+  left:-29px;
+  width:10px;
+  height:10px;
+  background:var(--season-primary);
+  border:3px solid var(--campus-surface);
+  border-radius:50%;
+}
+
+.huwd-events__date {
+  display:block;
+  margin-bottom:5px;
+  color:var(--campus-accent);
+  font:700 10px var(--campus-mono-font);
+  text-transform:uppercase;
+}
+
+.huwd-events__name {
+  margin-bottom:7px;
+  color:var(--campus-text);
+  font:700 16px var(--campus-body-font);
+}
+
+.huwd-events__status {
+  display:inline-block;
+  margin-top:10px;
+  padding:5px 9px;
+  border:1px solid var(--campus-border);
+  border-radius:5px;
+  color:var(--campus-muted);
+  font:700 9px var(--campus-mono-font);
+  text-transform:uppercase;
+}
+
+.huwd-events__status--active {
+  background:var(--season-primary);
+  color:var(--campus-contrast);
+  border-color:var(--season-primary);
+}
+
+.huwd-events a {
+  color:var(--campus-accent);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.huwd-events__link {
+  display:inline-block;
+  margin-top:10px;
+}
+
+.huwd-events__footer {
+  margin-top:18px;
+  padding-top:12px;
+  border-top:1px solid var(--campus-border);
+  color:var(--campus-muted);
+  font:700 9px var(--campus-mono-font);
+  text-align:right;
+  letter-spacing:1px;
+}
+
+@media(max-width:600px) {
+  .huwd-events {
+    padding:12px;
+  }
+  .huwd-events__title {
+    font-size:27px;
+  }
+}
+
