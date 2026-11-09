@@ -159,3 +159,116 @@
   font-size: 10px;
 }
 
+/* =========================================
+   HUWD · TABLILLAS
+   EXTENSIONES: IMAGEN Y TABLAS
+========================================= */
+
+/* IMAGEN PRINCIPAL */
+.huwd-board__image {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--campus-border);
+  border-radius: 10px;
+  background: var(--campus-soft);
+}
+
+.huwd-board__image img {
+  display: block;
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+}
+
+.huwd-board__image figcaption {
+  padding: 9px 12px;
+  background: var(--campus-surface);
+  color: var(--campus-muted);
+  font: 10px/1.5 var(--campus-mono-font);
+  text-align: center;
+}
+
+/* IMAGEN DENTRO DE UN APARTADO */
+.huwd-board__section-image {
+  display: block;
+  width: 100%;
+  max-height: 220px;
+  margin: 10px 0;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+/* CONTENEDOR DE TABLAS */
+.huwd-board__table-wrap {
+  width: 100%;
+  margin: 0;
+  overflow-x: auto;
+  border: 1px solid var(--campus-border);
+  border-radius: 9px;
+}
+
+/* TABLA */
+.huwd-board table.huwd-board__table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  background: var(--campus-surface);
+  color: var(--campus-text);
+  font: 11px/1.5 var(--campus-body-font);
+}
+
+/* CABECERAS */
+.huwd-board .huwd-board__table th {
+  padding: 11px 12px;
+  background: var(--season-primary);
+  color: var(--campus-contrast);
+  font: 700 10px/1.4 var(--campus-mono-font);
+  text-align: left;
+  text-transform: uppercase;
+}
+
+/* CELDAS */
+.huwd-board .huwd-board__table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--campus-border);
+  vertical-align: middle;
+}
+
+/* FILAS ALTERNAS */
+.huwd-board .huwd-board__table tbody tr:nth-child(even) {
+  background: var(--campus-soft);
+}
+
+/* ÚLTIMA FILA */
+.huwd-board .huwd-board__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ENLACES */
+.huwd-board .huwd-board__table a {
+  color: var(--campus-accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* IMÁGENES PEQUEÑAS EN TABLAS */
+.huwd-board .huwd-board__table-thumb {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* ADAPTACIÓN MÓVIL */
+@media (max-width: 600px) {
+  .huwd-board__image img {
+    max-height: 190px;
+  }
+
+  .huwd-board .huwd-board__table {
+    min-width: 480px;
+  }
+}
+
