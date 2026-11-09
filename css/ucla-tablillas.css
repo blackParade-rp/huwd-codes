@@ -346,3 +346,16 @@
   color:var(--campus-accent);
   font-weight:700;
 }
+.huwd-board .huwd-board__table-wrap > br,
+.huwd-board .huwd-board__table > br,
+.huwd-board .huwd-board__table > thead > br,
+.huwd-board .huwd-board__table > tbody > br,
+.huwd-board .huwd-board__table tr > br {
+  display:none!important;
+}
+
+.huwd-board .huwd-board__table-wrap {
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+}
