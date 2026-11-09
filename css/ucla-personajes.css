@@ -1,1 +1,293 @@
-/* UCLA personajes */
+
+/* ==========================================
+   HUWD · EXPEDIENTE DE PERSONAJE
+   ========================================== */
+
+/* Contenedor y color del grupo */
+
+.huwd-file {
+    --huwd-file-color: var(
+        --campus-post-group,
+        var(--season-primary)
+    );
+
+    --huwd-file-soft: color-mix(
+        in srgb,
+        var(--huwd-file-color) 10%,
+        var(--campus-surface)
+    );
+
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 18px;
+
+    background: var(--campus-surface);
+    border: 1px solid var(--campus-border);
+    border-radius: 12px;
+
+    color: var(--campus-text);
+    font: 12px/1.7 var(--campus-body-font);
+    box-sizing: border-box;
+}
+
+.huwd-file *,
+.huwd-file *::before,
+.huwd-file *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   01. CABECERA
+   ========================================== */
+
+.huwd-file__header {
+    margin-bottom: 18px;
+    padding: 18px 20px;
+
+    background: var(--huwd-file-color);
+    border-radius: 9px;
+    color: #191919;
+}
+
+.huwd-file__eyebrow {
+    display: block;
+    margin-bottom: 4px;
+
+    font: 700 9px var(--campus-mono-font);
+    letter-spacing: 1.5px;
+}
+
+.huwd-file__name {
+    font-family: var(--campus-title-font);
+    font-size: clamp(30px, 5vw, 45px);
+    font-weight: 400;
+    line-height: 1.25;
+    text-transform: none;
+}
+
+.huwd-file__subtitle {
+    display: block;
+    margin-top: 4px;
+    font: 10px var(--campus-mono-font);
+}
+
+/* ==========================================
+   02. IDENTIDAD Y DATOS PERSONALES
+   ========================================== */
+
+.huwd-file__identity {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+    margin-bottom: 18px;
+}
+
+.huwd-file__portrait {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+
+    border: 3px solid var(--huwd-file-color);
+    border-radius: 9px;
+    background: var(--campus-soft);
+}
+
+.huwd-file__portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.huwd-file__details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.huwd-file__field {
+    min-width: 0;
+    padding: 10px 12px;
+
+    background: var(--huwd-file-soft);
+    border: 1px solid var(--campus-border);
+    border-radius: 6px;
+}
+
+.huwd-file__field span {
+    display: block;
+    margin-bottom: 3px;
+
+    color: var(--campus-muted);
+    font: 700 9px var(--campus-mono-font);
+    text-transform: uppercase;
+}
+
+.huwd-file__field strong {
+    display: block;
+    color: var(--campus-text);
+    font: 700 11px/1.4 var(--campus-body-font);
+    overflow-wrap: anywhere;
+}
+
+.huwd-file__field--full {
+    grid-column: 1 / -1;
+    border-left: 3px solid var(--huwd-file-color);
+}
+
+/* ==========================================
+   03. APARTADOS
+   ========================================== */
+
+.huwd-file__section {
+    min-width: 0;
+    margin-bottom: 16px;
+    padding: 16px;
+
+    background: var(--campus-surface);
+    border: 1px solid var(--campus-border);
+    border-radius: 9px;
+}
+
+.huwd-file__section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 9px;
+
+    border-bottom: 1px solid var(--campus-border);
+}
+
+.huwd-file__section-heading > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 27px;
+    height: 22px;
+    padding: 0 5px;
+
+    background: var(--huwd-file-color);
+    color: #191919;
+    border-radius: 4px;
+
+    font: 700 10px var(--campus-mono-font);
+}
+
+.huwd-file__section-heading h3 {
+    margin: 0;
+    padding: 0;
+
+    color: var(--campus-text);
+    font: 700 13px var(--campus-body-font);
+    border: 0;
+    background: none;
+}
+
+.huwd-file__story,
+.huwd-file__extra-text {
+    color: var(--campus-text);
+    font: 12px/1.8 var(--campus-body-font);
+    text-align: justify;
+}
+
+.huwd-file__story p,
+.huwd-file__extra-text p {
+    margin: 0 0 10px;
+}
+
+.huwd-file__story p:last-child,
+.huwd-file__extra-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   04. DATOS EXTRA E IMAGEN SECUNDARIA
+   ========================================== */
+
+.huwd-file__extras {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 250px;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.huwd-file__extras .huwd-file__section {
+    margin-bottom: 0;
+}
+
+.huwd-file__secondary-image {
+    width: 250px;
+    height: 300px;
+    overflow: hidden;
+
+    border: 3px solid var(--huwd-file-color);
+    border-radius: 9px;
+    background: var(--campus-soft);
+}
+
+.huwd-file__secondary-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================
+   05. PIE DE EXPEDIENTE
+   ========================================== */
+
+.huwd-file__footer {
+    margin-top: 16px;
+    padding-top: 12px;
+
+    border-top: 1px solid var(--campus-border);
+    color: var(--campus-muted);
+
+    font: 700 9px var(--campus-mono-font);
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+/* ==========================================
+   06. RESPONSIVE
+   ========================================== */
+
+@media (max-width: 700px) {
+    .huwd-file__identity {
+        grid-template-columns: 1fr;
+    }
+
+    .huwd-file__portrait {
+        margin: 0 auto;
+    }
+
+    .huwd-file__extras {
+        grid-template-columns: 1fr;
+    }
+
+    .huwd-file__secondary-image {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 420px) {
+    .huwd-file {
+        padding: 12px;
+    }
+
+    .huwd-file__header {
+        padding: 14px;
+    }
+
+    .huwd-file__details {
+        grid-template-columns: 1fr;
+    }
+
+    .huwd-file__field--full {
+        grid-column: auto;
+    }
+}
