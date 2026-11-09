@@ -585,3 +585,62 @@
     align-content: stretch;
     grid-auto-rows: minmax(0, 1fr);
 }
+/* ==========================================
+   HUWD · BAÚL DE PERSONAJE
+   Portada, relaciones y cronología
+   ========================================== */
+.huwd-trunk {
+    --trunk-accent: var(--campus-post-group, var(--season-primary));
+    --trunk-soft: color-mix(in srgb, var(--trunk-accent) 10%, var(--campus-surface));
+    --trunk-ink: var(--campus-post-ink, #191919);
+    width: 100%; max-width: 800px; margin: 0 auto; padding: 18px;
+    box-sizing: border-box; border: 1px solid var(--campus-border);
+    border-radius: 12px; background: var(--campus-surface);
+    color: var(--campus-text); font: 12px/1.65 var(--campus-body-font);
+}
+.huwd-trunk *, .huwd-trunk *::before, .huwd-trunk *::after { box-sizing: border-box; }
+.huwd-trunk__header { padding: 18px 20px; margin-bottom: 16px; border-radius: 9px; background: var(--trunk-accent); color: var(--trunk-ink); }
+.huwd-trunk__eyebrow { display: block; font: 700 9px var(--campus-mono-font); letter-spacing: 1.5px; text-transform: uppercase; }
+.huwd-trunk__title { margin: 4px 0; font: 400 clamp(28px,5vw,43px)/1.25 var(--campus-title-font); color: inherit; }
+.huwd-trunk__subtitle { font: 10px/1.5 var(--campus-mono-font); }
+.huwd-trunk__profile { display: grid; grid-template-columns: 250px minmax(0,1fr); gap: 16px; align-items: stretch; margin-bottom: 16px; }
+.huwd-trunk__photo { width: 250px; height: 300px; overflow: hidden; border: 3px solid var(--trunk-accent); border-radius: 9px; background: var(--trunk-soft); }
+.huwd-trunk__photo img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.huwd-trunk__profile-content { min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.huwd-trunk__facts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+.huwd-trunk__fact { padding: 10px 12px; min-width: 0; border: 1px solid var(--campus-border); border-radius: 6px; background: var(--trunk-soft); }
+.huwd-trunk__fact small { display: block; margin-bottom: 3px; color: var(--campus-muted); font: 700 9px var(--campus-mono-font); text-transform: uppercase; }
+.huwd-trunk__fact strong { color: var(--campus-text); font-size: 11px; overflow-wrap: anywhere; }
+.huwd-trunk__bio { flex: 1; padding: 12px; border-left: 3px solid var(--trunk-accent); background: var(--trunk-soft); border-radius: 5px; }
+.huwd-trunk__bio p, .huwd-trunk__description p { margin: 0 0 8px; }
+.huwd-trunk__bio p:last-child, .huwd-trunk__description p:last-child { margin-bottom: 0; }
+.huwd-trunk__heading { display: flex; align-items: center; gap: 9px; padding: 0 0 9px; margin: 0 0 12px; border-bottom: 1px solid var(--campus-border); color: var(--campus-text); font: 700 13px var(--campus-body-font); }
+.huwd-trunk__number { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; padding: 4px 6px; border-radius: 4px; background: var(--trunk-accent); color: var(--trunk-ink); font: 700 10px var(--campus-mono-font); }
+.huwd-trunk__links { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin-bottom: 16px; }
+.huwd-trunk__links a { display: flex; align-items: center; gap: 9px; min-width: 0; padding: 12px; border: 1px solid var(--campus-border); border-radius: 7px; background: var(--trunk-soft); color: var(--campus-text) !important; font: 700 11px var(--campus-body-font); text-decoration: none !important; transition: border-color .2s, transform .2s; }
+.huwd-trunk__links a:hover { border-color: var(--trunk-accent); transform: translateY(-2px); }
+.huwd-trunk__links i { color: var(--trunk-accent); font-size: 16px; width: 20px; text-align: center; flex: 0 0 20px; }
+.huwd-trunk__footer { padding-top: 12px; border-top: 1px solid var(--campus-border); color: var(--campus-muted); font: 700 9px var(--campus-mono-font); text-align: right; letter-spacing: 1px; }
+/* RELACIONES */
+.huwd-trunk__relation-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-bottom: 16px; }
+.huwd-trunk__relation { min-width: 0; padding: 12px; border: 1px solid var(--campus-border); border-radius: 8px; background: var(--campus-surface); }
+.huwd-trunk__relation-top { display: flex; gap: 11px; align-items: center; margin-bottom: 10px; }
+.huwd-trunk__relation-avatar { width: 72px; height: 72px; flex: 0 0 72px; overflow: hidden; border-radius: 7px; border: 2px solid var(--trunk-accent); background: var(--trunk-soft); }
+.huwd-trunk__relation-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.huwd-trunk__relation-name { color: var(--campus-text); font: 700 13px var(--campus-body-font); }
+.huwd-trunk__relation-kind { display: block; margin-top: 4px; color: var(--trunk-accent); font: 700 9px var(--campus-mono-font); text-transform: uppercase; }
+.huwd-trunk__description { color: var(--campus-text); font-size: 11px; line-height: 1.7; }
+.huwd-trunk__relation-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+.huwd-trunk__relation-actions a, .huwd-trunk__role-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 9px; border: 1px solid var(--trunk-accent); border-radius: 5px; color: var(--trunk-accent) !important; font: 700 10px var(--campus-mono-font); text-decoration: none !important; }
+.huwd-trunk__relation-actions a:hover, .huwd-trunk__role-link:hover { background: var(--trunk-soft); }
+/* CRONOLOGÍA */
+.huwd-trunk__month { margin-bottom: 16px; border: 1px solid var(--campus-border); border-radius: 8px; padding: 12px; }
+.huwd-trunk__month-title { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 9px; padding-bottom: 9px; border-bottom: 1px solid var(--campus-border); color: var(--trunk-accent); font: 700 11px var(--campus-mono-font); text-transform: uppercase; }
+.huwd-trunk__month-count { font: 700 9px var(--campus-mono-font); color: var(--campus-muted); }
+.huwd-trunk__role { display: grid; grid-template-columns: 60px minmax(0,1fr) auto; gap: 10px; align-items: center; padding: 10px; margin-top: 6px; border-left: 3px solid var(--trunk-accent); border-radius: 5px; background: var(--trunk-soft); }
+.huwd-trunk__role-date { font: 700 10px var(--campus-mono-font); color: var(--trunk-accent); }
+.huwd-trunk__role-name { min-width: 0; font: 700 11px var(--campus-body-font); color: var(--campus-text); }
+.huwd-trunk__role-meta { display: block; margin-top: 3px; font: 10px var(--campus-body-font); color: var(--campus-muted); }
+.huwd-trunk__role-link { white-space: nowrap; }
+.huwd-trunk__status { display: inline-block; margin-left: 6px; font: 700 9px var(--campus-mono-font); color: var(--campus-muted); }
+
