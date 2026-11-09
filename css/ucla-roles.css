@@ -414,3 +414,11 @@
     margin: 0;
     padding: 0;
 }
+
+
+/* HUWD · AJUSTE FINO DEL CAMPO DÓNDE */
+
+.huwd-role__meta .huwd-role__field:nth-child(2) {
+    position: relative;
+    top: -2px;
+}
