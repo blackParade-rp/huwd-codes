@@ -191,20 +191,3 @@
     font: 700 10px var(--campus-mono-font);
     letter-spacing: 1px;
 }
-
-/* 08. AJUSTES MÓVILES */
-
-@media (max-width: 600px) {
-    .campus-post-card .postbody .content blockquote {
-        padding: 13px 14px;
-    }
-
-    .campus-post-card .postbody .content .codebox:not(.spoiler) dd {
-        padding: 10px;
-    }
-
-    .campus-post-card .postbody .content .huwd-copy-button {
-        padding: 5px 7px;
-        font-size: 9px;
-    }
-}
