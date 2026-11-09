@@ -120,3 +120,42 @@
   display: none;
 }
 
+/* =========================================
+   HUWD · TIPOGRAFÍA COMPACTA
+========================================= */
+
+/* Texto general */
+.huwd-board {
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* Introducción y párrafos */
+.huwd-board__intro,
+.huwd-board__section p {
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* Títulos de apartados */
+.huwd-board__subtitle {
+  font-size: 11px;
+}
+
+/* Etiqueta superior */
+.huwd-board__eyebrow {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+/* Números de apartados */
+.huwd-board__number {
+  font-size: 10px;
+}
+
+/* Pie de la tablilla */
+.huwd-board__footer,
+.huwd-board__links a {
+  font-size: 10px;
+}
+
