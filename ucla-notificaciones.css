@@ -1,0 +1,30 @@
+/* HUWD · NOTIFICACIONES */
+
+body#modernbb #notif_list li {
+    position: relative;
+    box-sizing: border-box;
+    padding-right: 32px !important;
+}
+
+body#modernbb #notif_list a {
+    overflow-wrap: anywhere;
+}
+
+/* Enlaces según el tema */
+body#modernbb #notif_list a[href] {
+    color: var(--season-primary) !important;
+}
+
+/* Recuperar botón de eliminar */
+body#modernbb #notif_list
+:is(.delete, .delete-notif, .delete_notification, .fa_notification_delete) {
+    position: absolute !important;
+    top: 12px;
+    right: 8px !important;
+    left: auto !important;
+    display: block !important;
+    visibility: visible !important;
+    width: 18px;
+    height: 18px;
+    color: var(--campus-text) !important;
+}
