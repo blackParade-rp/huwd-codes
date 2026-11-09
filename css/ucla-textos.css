@@ -1,0 +1,79 @@
+
+/* ==========================================
+   HUWD · FORMATOS DE TEXTO EN LOS POSTS
+   ========================================== */
+
+/* Color del personaje o color predeterminado */
+.campus-post-card {
+    --campus-format-color: var(
+        --campus-post-group,
+        var(--season-primary)
+    );
+
+    --campus-format-ink: var(
+        --campus-post-ink,
+        var(--campus-contrast)
+    );
+}
+
+/* ==========================================
+   01. NEGRITA
+   ========================================== */
+
+.campus-post-card .postbody .content b,
+.campus-post-card .postbody .content strong {
+    color: var(--campus-format-color) !important;
+    font-weight: 700;
+}
+
+/* ==========================================
+   02. SUBRAYADO CON RELLENO
+   ========================================== */
+
+.campus-post-card .postbody .content u,
+.campus-post-card .postbody .content ins {
+    color: var(--campus-format-ink);
+    background: var(--campus-format-color);
+
+    text-decoration: none !important;
+    padding: 1px 3px;
+    border-radius: 2px;
+
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+/* ==========================================
+   03. TEXTO SELECCIONADO
+   ========================================== */
+
+.campus-post-card .postbody .content ::selection {
+    background: var(--campus-format-color);
+    color: var(--campus-format-ink);
+    text-shadow: none;
+}
+
+.campus-post-card .postbody .content ::-moz-selection {
+    background: var(--campus-format-color);
+    color: var(--campus-format-ink);
+    text-shadow: none;
+}
+
+/* ==========================================
+   04. TEXTO ANIDADO
+   ========================================== */
+
+/* Negrita dentro de un subrayado */
+.campus-post-card .postbody .content u b,
+.campus-post-card .postbody .content u strong,
+.campus-post-card .postbody .content ins b,
+.campus-post-card .postbody .content ins strong {
+    color: inherit !important;
+}
+
+/* Selección del texto en negrita */
+.campus-post-card .postbody .content b::selection,
+.campus-post-card .postbody .content strong::selection {
+    color: var(--campus-format-ink);
+    background: var(--campus-format-color);
+}
