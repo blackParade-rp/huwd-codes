@@ -1085,3 +1085,46 @@
     color: #191919 !important;
     text-decoration-color: #191919 !important;
 }
+/* ==========================================
+   HUWD · GRUPOS
+   CORRECCIÓN DE TÍTULOS Y SUBRAYADOS
+   ========================================== */
+
+/* Nombre del grupo */
+.huwd-group .huwd-group__title,
+.huwd-group .huwd-group__title a {
+    color: var(--huwd-group-ink) !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* Títulos de las secciones */
+.huwd-group .huwd-group__section-title,
+.huwd-group .huwd-group__section-title a {
+    color: var(--campus-text) !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* Evitar subrayados añadidos por Foroactivo */
+.huwd-group .huwd-group__title::before,
+.huwd-group .huwd-group__title::after,
+.huwd-group .huwd-group__section-title::before,
+.huwd-group .huwd-group__section-title::after {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Eliminar posibles subrayados heredados */
+.huwd-group .huwd-group__title,
+.huwd-group .huwd-group__section-title {
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+/* Enlaces dentro de las cabeceras */
+.huwd-group .huwd-group__header a {
+    color: var(--huwd-group-ink) !important;
+    text-decoration: none !important;
+}
