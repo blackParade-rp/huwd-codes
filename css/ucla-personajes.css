@@ -644,3 +644,264 @@
 .huwd-trunk__role-link { white-space: nowrap; }
 .huwd-trunk__status { display: inline-block; margin-left: 6px; font: 700 9px var(--campus-mono-font); color: var(--campus-muted); }
 
+/* HUWD · REGISTROS INTERNOS DE FRATERNIDADES */
+.huwd-frat {
+    --frat: #60D7A9;
+    --frat-ink: #17202a;
+    max-width: 780px;
+    margin: 18px auto;
+    padding: 22px;
+    background: var(--campus-surface, #fff);
+    color: var(--campus-text, #243447);
+    border: 1px solid var(--campus-border, #dce5ee);
+    border-top: 5px solid var(--frat);
+    border-radius: 16px;
+    box-sizing: border-box;
+    font-family: var(--campus-body-font, Verdana, sans-serif)
+}
+
+.huwd-frat--lambda {
+    --frat: #60D7A9
+}
+
+.huwd-frat--upsilon {
+    --frat: #6EC954
+}
+
+.huwd-frat--kappa {
+    --frat: #8F55AA
+}
+
+.huwd-frat--delta {
+    --frat: #F09947
+}
+
+.huwd-frat--tau {
+    --frat: #E64747
+}
+
+.huwd-frat--sigma {
+    --frat: #D7D019
+}
+
+.huwd-frat * {
+    box-sizing: border-box
+}
+
+.huwd-frat__head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--campus-border, #dce5ee)
+}
+
+.huwd-frat__emblem {
+    width: 58px;
+    height: 58px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: color-mix(in srgb, var(--frat) 17%, var(--campus-surface, #fff));
+    color: var(--frat);
+    font-size: 28px;
+    border: 1px solid color-mix(in srgb, var(--frat) 35%, transparent)
+}
+
+.huwd-frat__eyebrow {
+    font: 700 10px var(--campus-mono-font, monospace);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--campus-muted, #728397)
+}
+
+.huwd-frat__title {
+    margin: 3px 0;
+    font: normal 30px/1.2 var(--campus-title-font, cursive);
+    color: var(--frat)
+}
+
+.huwd-frat__subtitle {
+    font-size: 11px;
+    color: var(--campus-muted, #728397)
+}
+
+.huwd-frat__intro {
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 0 0 17px
+}
+
+.huwd-frat__section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0 12px;
+    font: 700 11px var(--campus-mono-font, monospace);
+    letter-spacing: 1px;
+    text-transform: uppercase
+}
+
+.huwd-frat__count {
+    font-size: 10px;
+    color: var(--campus-muted, #728397);
+    font-weight: 400
+}
+
+.huwd-frat__members {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px
+}
+
+.huwd-frat__member {
+    display: flex;
+    gap: 12px;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--campus-border, #dce5ee);
+    border-radius: 11px;
+    background: var(--campus-bg, #f2f6fa)
+}
+
+.huwd-frat__photo {
+    width: 92px;
+    height: 118px;
+    object-fit: cover;
+    flex: none;
+    border-radius: 8px;
+    background: var(--campus-border, #dce5ee)
+}
+
+.huwd-frat__member-info {
+    min-width: 0;
+    flex: 1
+}
+
+.huwd-frat__name {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--frat);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    margin-bottom: 8px
+}
+
+.huwd-frat__data {
+    display: grid;
+    gap: 5px
+}
+
+.huwd-frat__datum {
+    font-size: 10px;
+    line-height: 1.5;
+    overflow-wrap: anywhere
+}
+
+.huwd-frat__datum b {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    font-size: 9px;
+    color: var(--campus-muted, #728397)
+}
+
+.huwd-frat__rooms {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px
+}
+
+.huwd-frat__room {
+    border: 1px solid var(--campus-border, #dce5ee);
+    border-radius: 11px;
+    overflow: hidden;
+    background: var(--campus-bg, #f2f6fa)
+}
+
+.huwd-frat__room-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    background: color-mix(in srgb, var(--frat) 12%, var(--campus-surface, #fff));
+    border-bottom: 1px solid var(--campus-border, #dce5ee)
+}
+
+.huwd-frat__room-number {
+    font: 700 12px var(--campus-mono-font, monospace)
+}
+
+.huwd-frat__room-state {
+    font: 700 9px var(--campus-mono-font, monospace);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--campus-muted, #728397)
+}
+
+.huwd-frat__beds {
+    display: grid;
+    gap: 0;
+    padding: 4px 11px
+}
+
+.huwd-frat__bed {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    padding: 9px 0
+}
+
+.huwd-frat__bed+.huwd-frat__bed {
+    border-top: 1px solid var(--campus-border, #dce5ee)
+}
+
+.huwd-frat__bed-avatar {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    flex: none;
+    border-radius: 50%;
+    border: 2px solid var(--frat);
+    background: var(--campus-surface, #fff)
+}
+
+.huwd-frat__bed-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--campus-text, #243447);
+    text-decoration: none;
+    overflow-wrap: anywhere
+}
+
+.huwd-frat__bed-label {
+    display: block;
+    font: 9px var(--campus-mono-font, monospace);
+    color: var(--campus-muted, #728397);
+    margin-bottom: 3px
+}
+
+.huwd-frat__bed--free .huwd-frat__bed-avatar {
+    border-style: dashed;
+    opacity: .4
+}
+
+.huwd-frat__bed--free .huwd-frat__bed-name {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--campus-muted, #728397)
+}
+
+.huwd-frat__footer {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid var(--campus-border, #dce5ee);
+    text-align: right;
+    font: 10px var(--campus-mono-font, monospace);
+    color: var(--campus-muted, #728397)
+}
