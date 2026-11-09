@@ -253,41 +253,114 @@
 }
 
 /* ==========================================
-   06. RESPONSIVE
+   HUWD · EXPEDIENTE ACADÉMICO
+   Comparte la estética del expediente personal
    ========================================== */
 
-@media (max-width: 700px) {
-    .huwd-file__identity {
-        grid-template-columns: 1fr;
-    }
-
-    .huwd-file__portrait {
-        margin: 0 auto;
-    }
-
-    .huwd-file__extras {
-        grid-template-columns: 1fr;
-    }
-
-    .huwd-file__secondary-image {
-        margin: 0 auto;
-    }
+.huwd-academic {
+    --huwd-academic-color: var(--campus-post-group, var(--season-primary));
+    --huwd-academic-ink: var(--campus-post-ink, var(--campus-contrast));
+    --huwd-academic-soft: color-mix(in srgb, var(--huwd-academic-color) 10%, var(--campus-surface));
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 18px;
+    box-sizing: border-box;
+    background: var(--campus-surface);
+    border: 1px solid var(--campus-border);
+    border-radius: 12px;
+    color: var(--campus-text);
+    font: 12px/1.7 var(--campus-body-font);
 }
 
-@media (max-width: 420px) {
-    .huwd-file {
-        padding: 12px;
-    }
+.huwd-academic *,
+.huwd-academic *::before,
+.huwd-academic *::after { box-sizing: border-box; }
 
-    .huwd-file__header {
-        padding: 14px;
-    }
+/* Cabecera */
+.huwd-academic__header {
+    margin-bottom: 18px;
+    padding: 18px 20px;
+    border-radius: 9px;
+    background: var(--huwd-academic-color);
+    color: var(--huwd-academic-ink);
+}
+.huwd-academic__eyebrow {
+    display: block;
+    margin-bottom: 4px;
+    font: 700 9px/1.5 var(--campus-mono-font);
+    letter-spacing: 1.5px;
+}
+.huwd-academic__name {
+    margin: 0;
+    font: 400 clamp(30px, 5vw, 45px)/1.25 var(--campus-title-font);
+    text-transform: none;
+}
+.huwd-academic__subtitle {
+    display: block;
+    margin-top: 4px;
+    font: 10px/1.5 var(--campus-mono-font);
+}
 
-    .huwd-file__details {
-        grid-template-columns: 1fr;
-    }
+/* Retrato y datos */
+.huwd-academic__identity {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+}
+.huwd-academic__portrait {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border: 3px solid var(--huwd-academic-color);
+    border-radius: 9px;
+    background: var(--huwd-academic-soft);
+}
+.huwd-academic__portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.huwd-academic__details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    align-content: start;
+}
+.huwd-academic__field {
+    min-width: 0;
+    padding: 10px 12px;
+    background: var(--huwd-academic-soft);
+    border: 1px solid var(--campus-border);
+    border-radius: 6px;
+}
+.huwd-academic__field-label {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--campus-muted);
+    font: 700 9px/1.4 var(--campus-mono-font);
+    text-transform: uppercase;
+}
+.huwd-academic__field-value {
+    display: block;
+    color: var(--campus-text);
+    font: 700 11px/1.5 var(--campus-body-font);
+    overflow-wrap: anywhere;
+}
+/* Cinco datos: el último ocupa las dos columnas */
+.huwd-academic__details--five .huwd-academic__field:last-child {
+    grid-column: 1 / -1;
+}
 
-    .huwd-file__field--full {
-        grid-column: auto;
-    }
+/* Pie */
+.huwd-academic__footer {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid var(--campus-border);
+    color: var(--campus-muted);
+    font: 700 9px/1.5 var(--campus-mono-font);
+    letter-spacing: 1px;
+    text-align: right;
 }
