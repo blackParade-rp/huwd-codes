@@ -1013,4 +1013,25 @@
   text-transform: uppercase;
 }
 
+/* ========================================
+   HUWD · COLORES DE TÍTULOS Y SUBRAYADOS
+   ======================================== */
 
+/* Nombre del grupo en la cabecera */
+.huwd-group__name {
+    color: #191919 !important;
+    text-decoration-color: #191919 !important;
+}
+
+/* Títulos de los apartados */
+.huwd-group__section-title,
+.huwd-group__section-title a {
+    color: var(--campus-text) !important;
+    text-decoration-color: var(--campus-text) !important;
+}
+
+/* Subrayados y enlaces de la cabecera */
+.huwd-group__header a {
+    color: #191919 !important;
+    text-decoration-color: #191919 !important;
+}
