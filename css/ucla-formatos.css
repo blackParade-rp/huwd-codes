@@ -191,12 +191,138 @@
     font: 700 10px var(--campus-mono-font);
     letter-spacing: 1px;
 }
+
+
 /* ==========================================
-   HUWD · OCULTAR AVISO DE EDICIÓN
+   HUWD · CORRECCIÓN DE COLORES Y BOTÓN COPIAR
    ========================================== */
 
-.campus-post-card .postbody .content .edit,
-.campus-post-card .postbody .content .edited,
-.campus-post-card .postbody .content .last-edited {
+/* Color de grupo o color UCLA por defecto */
+
+body#modernbb .campus-post-card {
+    --huwd-block-accent: var(
+        --campus-post-group,
+        var(--season-primary)
+    );
+
+    --huwd-block-soft: color-mix(
+        in srgb,
+        var(--huwd-block-accent) 9%,
+        var(--campus-surface)
+    );
+}
+
+/* Bordes de citas, códigos, spoilers y hide */
+
+body#modernbb .campus-post-card .postbody .content blockquote,
+body#modernbb .campus-post-card .postbody .content .codebox,
+body#modernbb .campus-post-card .postbody .content .spoiler,
+body#modernbb .campus-post-card .postbody .content .hidecode {
+    border-color: var(--campus-border);
+    border-left-color: var(--huwd-block-accent);
+}
+
+/* Código: línea superior con color de grupo */
+
+body#modernbb .campus-post-card .postbody .content
+.codebox:not(.spoiler):not(.hidecode) {
+    border-top: 3px solid var(--huwd-block-accent);
+    border-left: 1px solid var(--campus-border);
+}
+
+/* Cabeceras */
+
+body#modernbb .campus-post-card .postbody .content
+.codebox dt,
+body#modernbb .campus-post-card .postbody .content
+.spoiler dt {
+    background: var(--huwd-block-soft);
+    color: var(--huwd-block-accent);
+}
+
+/* Etiquetas y títulos */
+
+body#modernbb .campus-post-card .postbody .content
+.codebox dt,
+body#modernbb .campus-post-card .postbody .content
+.codebox dt *,
+body#modernbb .campus-post-card .postbody .content
+.spoiler dt,
+body#modernbb .campus-post-card .postbody .content
+blockquote cite {
+    color: var(--huwd-block-accent);
+}
+
+/* Eliminar iconos decorativos del encabezado de código */
+
+body#modernbb .campus-post-card .postbody .content
+.codebox:not(.spoiler):not(.hidecode) dt::before,
+body#modernbb .campus-post-card .postbody .content
+.codebox:not(.spoiler):not(.hidecode) dt::after {
+    content: none !important;
     display: none !important;
+}
+
+/* Botón copiar: posición y espacio propios */
+
+body#modernbb .campus-post-card .postbody .content
+.codebox dt .huwd-copy-button {
+    position: relative !important;
+    inset: auto !important;
+    float: none !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    flex: 0 0 auto;
+    min-width: 82px;
+    min-height: 30px;
+    margin: 0 0 0 auto !important;
+    padding: 6px 10px !important;
+
+    background: var(--campus-surface) !important;
+    color: var(--huwd-block-accent) !important;
+    border: 1px solid var(--campus-border) !important;
+    border-radius: 5px;
+
+    font: 700 10px var(--campus-mono-font);
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Quitar adornos heredados del botón */
+
+body#modernbb .campus-post-card
+.huwd-copy-button::before,
+body#modernbb .campus-post-card
+.huwd-copy-button::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Cabecera flexible y sin superposiciones */
+
+body#modernbb .campus-post-card .postbody .content
+.codebox:not(.spoiler):not(.hidecode) dt {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 12px;
+    min-height: 44px;
+}
+
+/* Color del borde de spoiler */
+
+body#modernbb .campus-post-card .postbody .content
+.spoiler {
+    border-left: 4px solid var(--huwd-block-accent);
+}
+
+/* Hide: borde discontinuo */
+
+body#modernbb .campus-post-card .postbody .content
+.hidecode {
+    border: 1px dashed var(--huwd-block-accent);
 }
