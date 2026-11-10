@@ -452,3 +452,106 @@
     );
 }
 
+
+/* ==========================================
+   HUWD · MODELO 06 · PROGRESS
+   Roles individuales de clases y clubes
+   ========================================== */
+
+.huwd-role--progress {
+    border: 1px solid var(--role-border);
+    border-radius: 12px;
+    background: var(--role-surface);
+}
+
+/* Cabecera */
+.huwd-role--progress .huwd-role__header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 23px 25px;
+    border-bottom: 1px solid var(--role-border);
+    background: var(--role-soft);
+}
+
+/* Icono personalizable */
+.huwd-role--progress .huwd-role__symbol {
+    display: grid;
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
+    place-items: center;
+    border: 1px solid var(--role-accent);
+    border-radius: 15px;
+    color: var(--role-accent);
+    font-size: 30px;
+}
+
+/* Título y descripción */
+.huwd-role--progress .huwd-role__heading {
+    flex: 1;
+    min-width: 0;
+}
+
+.huwd-role--progress .huwd-role__title {
+    margin: 5px 0;
+    font-size: 30px;
+}
+
+.huwd-role--progress .huwd-role__subtitle {
+    font-size: 10px;
+    color: var(--role-muted);
+}
+
+/* Narración */
+.huwd-role--progress .huwd-role__body {
+    padding: 25px 28px;
+    font-size: 11px;
+    line-height: 1.85;
+}
+
+/* Pie */
+.huwd-role--progress .huwd-role__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 25px;
+    border-top: 1px solid var(--role-border);
+    font: 700 9px var(--campus-mono-font, monospace);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--role-muted);
+}
+
+.huwd-role--progress .huwd-role__footer i {
+    color: var(--role-accent);
+    font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+    .huwd-role--progress .huwd-role__header {
+        gap: 12px;
+        padding: 17px;
+    }
+
+    .huwd-role--progress .huwd-role__symbol {
+        flex-basis: 55px;
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+    }
+
+    .huwd-role--progress .huwd-role__title {
+        font-size: 25px;
+    }
+
+    .huwd-role--progress .huwd-role__body {
+        padding: 19px;
+    }
+
+    .huwd-role--progress .huwd-role__footer {
+        padding: 12px 17px;
+    }
+}
