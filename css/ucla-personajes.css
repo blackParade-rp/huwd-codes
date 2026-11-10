@@ -252,41 +252,66 @@
     text-align: right;
 }
 
-
 /* ==========================================
-   HUWD · DATOS EXTRA CON SCROLL
-   Altura igualada con la imagen lateral
+   HUWD · EXPEDIENTE PERSONAL
+   DATOS EXTRA CON ALTURA FIJA Y SCROLL
    ========================================== */
 
-/* Contenedor de los datos extra y la imagen */
-.huwd-character__extra {
+/* Ambas columnas mantienen la misma altura */
+.huwd-file__extras {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 250px;
+    gap: 16px;
     align-items: stretch;
 }
 
-/* Columna de texto */
-.huwd-character__extra-content {
+/* Recuadro de datos extra */
+.huwd-file__extras > .huwd-file__section {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
     min-height: 0;
-    max-height: 300px;
+    min-width: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+/* Cabecera siempre visible */
+.huwd-file__extras .huwd-file__section-heading {
+    flex: 0 0 auto;
+}
+
+/* Solo el texto tiene scroll */
+.huwd-file__extras .huwd-file__extra-text {
+    flex: 1 1 auto;
+    min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
+    padding-right: 8px;
+
     scrollbar-width: thin;
-    scrollbar-color: var(--campus-border) transparent;
+    scrollbar-color: var(--huwd-file-color) transparent;
 }
 
 /* Scroll personalizado */
-.huwd-character__extra-content::-webkit-scrollbar {
+.huwd-file__extras .huwd-file__extra-text::-webkit-scrollbar {
     width: 5px;
 }
 
-.huwd-character__extra-content::-webkit-scrollbar-thumb {
-    background: var(--campus-border);
+.huwd-file__extras .huwd-file__extra-text::-webkit-scrollbar-thumb {
+    background: var(--huwd-file-color);
     border-radius: 10px;
 }
 
-.huwd-character__extra-content::-webkit-scrollbar-track {
+.huwd-file__extras .huwd-file__extra-text::-webkit-scrollbar-track {
     background: transparent;
 }
 
+/* Imagen lateral */
+.huwd-file__secondary-image {
+    width: 250px;
+    height: 300px;
+}
 
 /* ==========================================
    HUWD · EXPEDIENTE ACADÉMICO
