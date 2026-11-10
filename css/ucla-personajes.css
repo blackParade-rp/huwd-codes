@@ -252,6 +252,42 @@
     text-align: right;
 }
 
+
+/* ==========================================
+   HUWD · DATOS EXTRA CON SCROLL
+   Altura igualada con la imagen lateral
+   ========================================== */
+
+/* Contenedor de los datos extra y la imagen */
+.huwd-character__extra {
+    align-items: stretch;
+}
+
+/* Columna de texto */
+.huwd-character__extra-content {
+    min-height: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--campus-border) transparent;
+}
+
+/* Scroll personalizado */
+.huwd-character__extra-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.huwd-character__extra-content::-webkit-scrollbar-thumb {
+    background: var(--campus-border);
+    border-radius: 10px;
+}
+
+.huwd-character__extra-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
 /* ==========================================
    HUWD · EXPEDIENTE ACADÉMICO
    Comparte la estética del expediente personal
