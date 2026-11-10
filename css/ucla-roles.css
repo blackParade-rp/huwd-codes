@@ -381,15 +381,6 @@
     border-top: 1px solid var(--role-border);
 }
 
-
-/* HUWD · TEXTO NARRATIVO DE LAS TABLILLAS DE ROL */
-
-.huwd-role .huwd-role__body,
-.huwd-role .huwd-role__body p {
-    font-size: 11.5px;
-    line-height: 1.85;
-}
-
 /* HUWD · ALINEACIÓN DE LOS DATOS DEL ROL */
 
 .huwd-role__meta {
