@@ -1583,3 +1583,32 @@
 }
 
 
+/* ==========================================
+   HUWD · TÍTULOS ADMINISTRATIVOS
+   Tipografía principal y sin subrayados
+   ========================================== */
+
+.huwd-admin-notice .huwd-admin-notice__title {
+  margin: 0 0 5px;
+  padding: 0;
+  border: none;
+  border-bottom: 0;
+  box-shadow: none;
+  background: transparent;
+  color: var(--campus-text);
+  font-family: var(--campus-body-font);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-transform: none;
+  text-decoration: none;
+}
+
+/* Eliminar líneas decorativas heredadas */
+.huwd-admin-notice .huwd-admin-notice__title::before,
+.huwd-admin-notice .huwd-admin-notice__title::after {
+  display: none;
+  content: none;
+}
+
