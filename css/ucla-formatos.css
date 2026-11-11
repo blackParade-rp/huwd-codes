@@ -326,3 +326,47 @@ body#modernbb .campus-post-card .postbody .content
 .hidecode {
     border: 1px dashed var(--huwd-block-accent);
 }
+
+
+/* ==========================================
+   HUWD · ESTADÍSTICAS DEL CAMPUS
+   Listados de usuarios con scroll interno
+   ========================================== */
+
+/* Las tres tarjetas se alinean en altura */
+.huwd-stats__grid {
+  align-items: stretch;
+}
+
+/* Las tarjetas pueden distribuir su contenido */
+.huwd-stats__card {
+  min-height: 0;
+}
+
+/* Listados de conectados */
+.huwd-stats__online-list,
+.huwd-stats__recent-list {
+  max-height: 195px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--season-primary) transparent;
+}
+
+/* Scroll para navegadores WebKit */
+.huwd-stats__online-list::-webkit-scrollbar,
+.huwd-stats__recent-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.huwd-stats__online-list::-webkit-scrollbar-thumb,
+.huwd-stats__recent-list::-webkit-scrollbar-thumb {
+  background: var(--season-primary);
+  border-radius: 10px;
+}
+
+.huwd-stats__online-list::-webkit-scrollbar-track,
+.huwd-stats__recent-list::-webkit-scrollbar-track {
+  background: transparent;
+}
