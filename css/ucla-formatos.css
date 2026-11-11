@@ -328,45 +328,81 @@ body#modernbb .campus-post-card .postbody .content
 }
 
 
+
 /* ==========================================
-   HUWD · ESTADÍSTICAS DEL CAMPUS
-   Listados de usuarios con scroll interno
+   HUWD · NUESTRA COMUNIDAD
+   Altura uniforme y scroll en los usuarios
    ========================================== */
 
-/* Las tres tarjetas se alinean en altura */
-.huwd-stats__grid {
+/* Las tres tarjetas mantienen la misma altura */
+.campus-community-grid {
   align-items: stretch;
 }
 
-/* Las tarjetas pueden distribuir su contenido */
-.huwd-stats__card {
+/* Cada tarjeta organiza su contenido verticalmente */
+.campus-community-grid > .campus-community-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* El contenido ocupa el espacio disponible */
+.campus-community-grid > .campus-community-panel > .campus-community-panel-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
   min-height: 0;
 }
 
-/* Listados de conectados */
-.huwd-stats__online-list,
-.huwd-stats__recent-list {
-  max-height: 195px;
+/* Los grupos determinan la altura mínima de la fila */
+.campus-community-groups {
+  flex: 0 0 auto;
+}
+
+/* Solo los listados de usuarios tienen scroll */
+.campus-community-users,
+.campus-community-recent {
+  min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 8px;
   scrollbar-width: thin;
   scrollbar-color: var(--season-primary) transparent;
 }
 
-/* Scroll para navegadores WebKit */
-.huwd-stats__online-list::-webkit-scrollbar,
-.huwd-stats__recent-list::-webkit-scrollbar {
+/* Conectados ahora: listado desplazable */
+.campus-community-users {
+  flex: 1 1 auto;
+  max-height: 145px;
+  padding-right: 7px;
+}
+
+/* Últimos conectados: listado desplazable */
+.campus-community-recent {
+  flex: 1 1 auto;
+  max-height: 235px;
+  padding-right: 7px;
+}
+
+/* Contadores siempre visibles al pie */
+.campus-community-stats {
+  flex: 0 0 auto;
+  margin-top: auto;
+}
+
+/* Scroll en Chrome, Edge y Safari */
+.campus-community-users::-webkit-scrollbar,
+.campus-community-recent::-webkit-scrollbar {
   width: 5px;
 }
 
-.huwd-stats__online-list::-webkit-scrollbar-thumb,
-.huwd-stats__recent-list::-webkit-scrollbar-thumb {
+.campus-community-users::-webkit-scrollbar-thumb,
+.campus-community-recent::-webkit-scrollbar-thumb {
   background: var(--season-primary);
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
-.huwd-stats__online-list::-webkit-scrollbar-track,
-.huwd-stats__recent-list::-webkit-scrollbar-track {
+.campus-community-users::-webkit-scrollbar-track,
+.campus-community-recent::-webkit-scrollbar-track {
   background: transparent;
 }
