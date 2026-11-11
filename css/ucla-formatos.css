@@ -328,69 +328,87 @@ body#modernbb .campus-post-card .postbody .content
 }
 
 
-
 /* ==========================================
    HUWD · NUESTRA COMUNIDAD
-   Altura uniforme y scroll en los usuarios
+   Tarjetas compactas y scroll interno
    ========================================== */
 
-/* Las tres tarjetas mantienen la misma altura */
+/* Altura uniforme para las tres tarjetas */
 .campus-community-grid {
+  display: grid;
   align-items: stretch;
+  height: 315px;
+  min-height: 0;
 }
 
-/* Cada tarjeta organiza su contenido verticalmente */
+/* Tarjetas ajustadas a la altura de la fila */
 .campus-community-grid > .campus-community-panel {
   display: flex;
   flex-direction: column;
+  height: 100%;
   min-height: 0;
   overflow: hidden;
 }
 
-/* El contenido ocupa el espacio disponible */
+/* Encabezados siempre visibles */
+.campus-community-grid > .campus-community-panel > h3 {
+  flex: 0 0 auto;
+}
+
+/* Interior de cada tarjeta */
 .campus-community-grid > .campus-community-panel > .campus-community-panel-body {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
   min-height: 0;
+  overflow: hidden;
 }
 
-/* Los grupos determinan la altura mínima de la fila */
-.campus-community-groups {
+/* Conectados ahora: contadores superiores */
+.campus-community-online {
   flex: 0 0 auto;
 }
 
-/* Solo los listados de usuarios tienen scroll */
-.campus-community-users,
-.campus-community-recent {
+/* Listado de usuarios conectados */
+.campus-community-users {
+  flex: 1 1 auto;
   min-height: 0;
+  max-height: none;
   overflow-y: auto;
   overflow-x: hidden;
+  padding-right: 7px;
+}
+
+/* Estadísticas siempre visibles abajo */
+.campus-community-stats {
+  flex: 0 0 auto;
+  margin-top: 10px;
+}
+
+/* Últimos conectados */
+.campus-community-recent {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 7px;
+}
+
+/* Grupos del campus: sin scroll */
+.campus-community-groups {
+  flex: 0 0 auto;
+  min-height: 0;
+  overflow: visible;
+}
+
+/* Barras de desplazamiento */
+.campus-community-users,
+.campus-community-recent {
   scrollbar-width: thin;
   scrollbar-color: var(--season-primary) transparent;
 }
 
-/* Conectados ahora: listado desplazable */
-.campus-community-users {
-  flex: 1 1 auto;
-  max-height: 145px;
-  padding-right: 7px;
-}
-
-/* Últimos conectados: listado desplazable */
-.campus-community-recent {
-  flex: 1 1 auto;
-  max-height: 235px;
-  padding-right: 7px;
-}
-
-/* Contadores siempre visibles al pie */
-.campus-community-stats {
-  flex: 0 0 auto;
-  margin-top: auto;
-}
-
-/* Scroll en Chrome, Edge y Safari */
 .campus-community-users::-webkit-scrollbar,
 .campus-community-recent::-webkit-scrollbar {
   width: 5px;
@@ -402,7 +420,19 @@ body#modernbb .campus-post-card .postbody .content
   border-radius: 8px;
 }
 
-.campus-community-users::-webkit-scrollbar-track,
-.campus-community-recent::-webkit-scrollbar-track {
-  background: transparent;
+/* Móvil: recuperar altura automática */
+@media (max-width: 768px) {
+  .campus-community-grid {
+    height: auto;
+  }
+
+  .campus-community-grid > .campus-community-panel {
+    height: auto;
+  }
+
+  .campus-community-users,
+  .campus-community-recent {
+    flex: 0 1 auto;
+    max-height: 180px;
+  }
 }
