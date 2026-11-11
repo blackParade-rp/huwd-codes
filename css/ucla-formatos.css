@@ -436,3 +436,36 @@ body#modernbb .campus-post-card .postbody .content
     max-height: 180px;
   }
 }
+
+
+/* ==========================================
+   HUWD · ICONOS DE CONTACTO
+   ========================================== */
+
+.campus-profile .huwd-contact-fa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 32px;
+  color: var(--season-primary);
+  text-decoration: none;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.campus-profile .huwd-contact-fa i {
+  font-size: 17px;
+  line-height: 1;
+  color: inherit;
+}
+
+.campus-profile .huwd-contact-fa:hover {
+  color: var(--season-secondary);
+  transform: translateY(-2px);
+}
+
+/* Iconos visibles sobre fondo oscuro */
+html[data-campus-theme="dark"]
+.campus-profile .huwd-contact-fa {
+  color: var(--season-primary);
+}
