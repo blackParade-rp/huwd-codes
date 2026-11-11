@@ -1267,4 +1267,319 @@
 
 
 
+/* ==========================================
+   HUWD · COMUNICADOS ADMINISTRATIVOS
+   Expedientes, registros y notas académicas
+   ========================================== */
+
+.huwd-admin-notice {
+  --notice-color: var(--season-primary);
+  --notice-soft: color-mix(in srgb, var(--notice-color) 9%, var(--campus-surface));
+  width: 100%;
+  max-width: 760px;
+  margin: 20px auto;
+  padding: 18px;
+  box-sizing: border-box;
+  border: 1px solid var(--campus-border);
+  border-top: 4px solid var(--notice-color);
+  border-radius: 12px;
+  background: var(--campus-bg);
+  color: var(--campus-text);
+  font-family: var(--campus-body-font);
+}
+
+.huwd-admin-notice *,
+.huwd-admin-notice *::before,
+.huwd-admin-notice *::after {
+  box-sizing: border-box;
+}
+
+/* Colores por estado */
+
+.huwd-admin-notice--building {
+  --notice-color: #8B91A1;
+}
+
+.huwd-admin-notice--review {
+  --notice-color: #E4A23A;
+}
+
+.huwd-admin-notice--accepted {
+  --notice-color: #43A878;
+}
+
+.huwd-admin-notice--updated {
+  --notice-color: #438FC7;
+}
+
+.huwd-admin-notice--grades {
+  --notice-color: var(--season-primary);
+}
+
+/* Cabecera */
+
+.huwd-admin-notice__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--campus-border);
+  border-radius: 9px;
+  background: var(--campus-surface);
+}
+
+.huwd-admin-notice__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  background: var(--notice-soft);
+  color: var(--notice-color);
+  font-size: 27px;
+}
+
+.huwd-admin-notice__heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.huwd-admin-notice__eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--notice-color);
+  font: 700 9px/1.5 var(--campus-mono-font);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.huwd-admin-notice__title {
+  margin: 0 0 5px;
+  color: var(--campus-text);
+  font: 700 19px/1.25 var(--campus-body-font);
+}
+
+.huwd-admin-notice__subtitle {
+  color: var(--campus-muted);
+  font: 10px/1.5 var(--campus-mono-font);
+}
+
+/* Cuerpo */
+
+.huwd-admin-notice__body {
+  margin-top: 12px;
+  padding: 20px;
+  border: 1px solid var(--campus-border);
+  border-radius: 9px;
+  background: var(--campus-surface);
+  color: var(--campus-text);
+  font: 12px/1.85 var(--campus-body-font);
+  text-align: justify;
+}
+
+.huwd-admin-notice__body p {
+  margin: 0 0 12px;
+}
+
+.huwd-admin-notice__body p:last-child {
+  margin-bottom: 0;
+}
+
+.huwd-admin-notice__body strong {
+  color: var(--notice-color);
+  font-weight: 700;
+}
+
+/* Avisos destacados */
+
+.huwd-admin-notice__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 14px 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--notice-color);
+  border-radius: 6px;
+  background: var(--notice-soft);
+  color: var(--campus-text);
+  font: 11px/1.7 var(--campus-body-font);
+  text-align: left;
+}
+
+.huwd-admin-notice__note i {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: var(--notice-color);
+}
+
+/* Observaciones del staff */
+
+.huwd-admin-notice__details {
+  margin: 14px 0;
+  padding: 14px;
+  border: 1px solid var(--campus-border);
+  border-radius: 8px;
+  background: var(--campus-bg);
+}
+
+.huwd-admin-notice__details > strong {
+  display: block;
+  margin-bottom: 9px;
+  font: 700 10px/1.5 var(--campus-mono-font);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.huwd-admin-notice__details > p {
+  margin-bottom: 0;
+}
+
+/* Información académica */
+
+.huwd-admin-notice__academic-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin: 16px 0;
+}
+
+.huwd-admin-notice__academic-info > div {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--campus-border);
+  border-radius: 7px;
+  background: var(--notice-soft);
+}
+
+.huwd-admin-notice__academic-info span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--campus-muted);
+  font: 700 9px/1.5 var(--campus-mono-font);
+  text-transform: uppercase;
+}
+
+.huwd-admin-notice__academic-info strong {
+  display: block;
+  color: var(--campus-text);
+  font: 700 11px/1.5 var(--campus-body-font);
+  overflow-wrap: anywhere;
+}
+
+/* Tabla de calificaciones */
+
+.huwd-admin-notice__table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.huwd-admin-notice__table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--campus-text);
+  font: 11px/1.6 var(--campus-body-font);
+  text-align: left;
+}
+
+.huwd-admin-notice__table th,
+.huwd-admin-notice__table td {
+  padding: 10px 9px;
+  border-bottom: 1px solid var(--campus-border);
+}
+
+.huwd-admin-notice__table th {
+  color: var(--notice-color);
+  font: 700 9px/1.5 var(--campus-mono-font);
+  text-transform: uppercase;
+}
+
+.huwd-admin-notice__table th:nth-child(2),
+.huwd-admin-notice__table td:nth-child(2) {
+  text-align: center;
+}
+
+.huwd-admin-notice__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Resultado final */
+
+.huwd-admin-notice__academic-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0;
+  padding: 13px;
+  border: 1px solid var(--notice-color);
+  border-radius: 7px;
+  background: var(--notice-soft);
+}
+
+.huwd-admin-notice__academic-result span {
+  color: var(--campus-text);
+  font: 700 10px/1.5 var(--campus-mono-font);
+  text-transform: uppercase;
+}
+
+.huwd-admin-notice__academic-result strong {
+  color: var(--notice-color);
+  font: 700 12px/1.5 var(--campus-body-font);
+}
+
+/* Pie del comunicado */
+
+.huwd-admin-notice__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-top: 1px solid var(--campus-border);
+  color: var(--campus-muted);
+  font: 700 9px/1.5 var(--campus-mono-font);
+  letter-spacing: 0.4px;
+}
+
+.huwd-admin-notice__footer span:last-child {
+  color: var(--notice-color);
+}
+
+/* Adaptación móvil */
+
+@media (max-width: 600px) {
+  .huwd-admin-notice {
+    padding: 10px;
+  }
+
+  .huwd-admin-notice__header {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .huwd-admin-notice__icon {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+
+  .huwd-admin-notice__title {
+    font-size: 16px;
+  }
+
+  .huwd-admin-notice__body {
+    padding: 14px;
+  }
+
+  .huwd-admin-notice__academic-info {
+    grid-template-columns: 1fr;
+  }
+}
+
 
