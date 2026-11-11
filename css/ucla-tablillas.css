@@ -670,19 +670,6 @@
     display: none !important;
 }
 
-/* Tablets: dos columnas */
-@media (max-width: 650px) {
-    .huwd-rewards .huwd-rewards__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    }
-}
-
-/* Móviles pequeños: una columna */
-@media (max-width: 400px) {
-    .huwd-rewards .huwd-rewards__grid {
-        grid-template-columns: 1fr !important;
-    }
-}
 
 /* HUWD · REGISTROS GENERALES */
 .huwd-registry {
@@ -1142,3 +1129,56 @@
     text-transform: none;
     color: var(--huwd-group-ink) !important;
 }
+
+
+/* ==========================================
+   HUWD · REGISTRO DE ESTUDIOS
+   Subdivisiones por carrera universitaria
+   ========================================== */
+
+/* Contenedor de las carreras de cada facultad */
+.huwd-registry__degrees {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  margin-top: 12px;
+}
+
+/* Tarjeta interior de cada carrera */
+.huwd-registry__degree {
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid var(--campus-border);
+  border-left: 3px solid var(--campus-accent);
+  border-radius: 7px;
+  background: var(--campus-soft);
+}
+
+/* Nombre de la carrera */
+.huwd-registry__degree-title {
+  margin-bottom: 10px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--campus-border);
+  color: var(--campus-accent);
+  font: 700 10px/1.5 var(--campus-mono-font);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+/* Listado de personajes dentro de cada carrera */
+.huwd-registry__degree .huwd-registry__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+/* Evitar desbordamientos con nombres largos */
+.huwd-registry__degree .huwd-registry__entry {
+  min-width: 0;
+}
+
+
+
