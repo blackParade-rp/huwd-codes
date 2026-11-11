@@ -1179,6 +1179,92 @@
 .huwd-registry__degree .huwd-registry__entry {
   min-width: 0;
 }
+/* ==========================================
+   HUWD · REGISTRO DE CLUBES
+   Divisiones y categorías desplegables
+   ========================================== */
+.huwd-club-registry__division {
+   margin: 22px 0 0;
+   min-width: 0
+}
+
+.huwd-club-registry__division-title {
+   margin: 0 0 10px;
+   padding: 10px 14px;
+   border-left: 4px solid var(--season-primary);
+   background: var(--campus-soft);
+   border-radius: 6px;
+   color: var(--campus-text);
+   font: 700 13px/1.5 var(--campus-mono-font);
+   text-transform: uppercase
+}
+
+.huwd-club-registry__division-note {
+   margin: 0 0 12px;
+   color: var(--campus-muted);
+   font: 11px/1.6 var(--campus-body-font)
+}
+
+.huwd-club-registry__category {
+   margin: 10px 0;
+   border: 1px solid var(--campus-border);
+   border-radius: 8px;
+   background: var(--campus-surface);
+   overflow: hidden
+}
+
+.huwd-club-registry__category-title {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 10px;
+   padding: 12px 14px;
+   cursor: pointer;
+   color: var(--campus-text);
+   font: 700 11px/1.5 var(--campus-mono-font);
+   list-style: none
+}
+
+.huwd-club-registry__category-title::-webkit-details-marker {
+   display: none
+}
+
+.huwd-club-registry__category-title::before {
+   content: "+";
+   font-size: 16px;
+   color: var(--season-primary)
+}
+
+.huwd-club-registry__category[open]>.huwd-club-registry__category-title::before {
+   content: "−"
+}
+
+.huwd-club-registry__count {
+   margin-left: auto;
+   color: var(--campus-muted);
+   font-size: 10px;
+   white-space: nowrap
+}
+
+.huwd-club-registry__category>.huwd-registry__grid {
+   padding: 12px;
+   border-top: 1px solid var(--campus-border)
+}
+
+.huwd-club-registry__category .huwd-registry__card {
+   min-width: 0
+}
+
+.huwd-club-registry__notice {
+   margin-top: 20px;
+   padding: 12px 14px;
+   border: 1px solid var(--campus-border);
+   border-radius: 7px;
+   background: var(--campus-soft);
+   color: var(--campus-text);
+   font: 11px/1.7 var(--campus-body-font)
+}
+
 
 
 
