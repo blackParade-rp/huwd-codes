@@ -1207,3 +1207,39 @@
 .huwd-academic__role-info > br {
   display: none !important;
 }
+
+
+/* ==========================================
+   HUWD · REGISTRO DE HABITACIONES
+   Eliminar saltos de línea de Foroactivo
+   ========================================== */
+
+/* Evitar espacios entre habitaciones */
+.huwd-frat__rooms > br {
+  display: none !important;
+}
+
+/* Evitar espacios entre las dos plazas */
+.huwd-frat__beds > br {
+  display: none !important;
+}
+
+/* Evitar saltos dentro de las habitaciones */
+.huwd-frat__room > br,
+.huwd-frat__room-head > br,
+.huwd-frat__bed > br {
+  display: none !important;
+}
+
+/* Evitar márgenes adicionales entre habitaciones */
+.huwd-frat__rooms > .huwd-frat__room {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Evitar márgenes adicionales entre plazas */
+.huwd-frat__beds > .huwd-frat__bed {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
