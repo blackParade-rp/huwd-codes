@@ -1178,3 +1178,32 @@
     line-height: 1.6;
     color: var(--campus-muted);
 }
+
+/* ==========================================
+   HUWD · EXPEDIENTE ACADÉMICO
+   Eliminar saltos de línea entre roles
+   ========================================== */
+
+/* Ocultar los saltos que introduce Foroactivo */
+.huwd-academic__role-list > br {
+  display: none !important;
+}
+
+/* Organizar los roles verticalmente */
+.huwd-academic__role-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Evitar márgenes adicionales en cada rol */
+.huwd-academic__role-list > .huwd-academic__role {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Evitar saltos entre los elementos internos de cada rol */
+.huwd-academic__role > br,
+.huwd-academic__role-info > br {
+  display: none !important;
+}
