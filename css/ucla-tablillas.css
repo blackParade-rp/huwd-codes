@@ -1,6 +1,4 @@
 /* HUWD · UCLA | TABLILLAS GENERALES · v1.0
-   GitHub: css/ucla-tablillas.css
-   Variables heredadas del tema; no define colores fijos de modo.
 */
 .huwd-board,
 .huwd-board * { box-sizing: border-box; }
@@ -1611,4 +1609,29 @@
   display: none;
   content: none;
 }
+
+
+/* ==========================================
+   HUWD · REGISTROS
+   Eliminar espacios entre entradas
+   ========================================== */
+
+/* Ocultar saltos de línea generados por Foroactivo */
+.huwd-registry__list > br {
+  display: none !important;
+}
+
+/* Evitar márgenes adicionales entre registros */
+.huwd-registry__list > .huwd-registry__entry {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Controlar la separación entre entradas */
+.huwd-registry__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 
