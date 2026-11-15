@@ -155,3 +155,15 @@ html[data-campus-theme="dark"] body:has(.forumbg .topiclist) .forumbg .topiclist
 html[data-campus-theme="dark"] body:has(.forumbg .topiclist) .forumbg .topiclist .header dd {
   color: var(--campus-contrast, #191919);
 }
+
+/* HUWD · PRUEBA DE RESULTADOS MODERNBB */
+
+.forumbg,
+.forabg {
+  border: 3px solid #e64747 !important;
+}
+
+ul.topiclist li.row,
+ul.topiclist li.header {
+  background: #202126 !important;
+}
