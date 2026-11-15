@@ -1243,3 +1243,33 @@
   margin-bottom: 0 !important;
 }
 
+
+/* ==========================================
+   HUWD · BAÚL DE RELACIONES
+   Eliminar saltos de línea de Foroactivo
+   ========================================== */
+
+/* Ocultar saltos entre los personajes */
+.huwd-trunk__relation-list > br {
+  display: none !important;
+}
+
+/* Ocultar saltos dentro de cada relación */
+.huwd-trunk__relation > br,
+.huwd-trunk__relation-top > br,
+.huwd-trunk__relation-actions > br {
+  display: none !important;
+}
+
+/* Evitar márgenes adicionales en las fichas */
+.huwd-trunk__relation-list > .huwd-trunk__relation {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Mantener una separación uniforme entre personajes */
+.huwd-trunk__relation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
