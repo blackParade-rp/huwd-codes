@@ -30,6 +30,47 @@ body#modernbb #notif_list
 }
 
 /* ==========================================
+   HUWD · TEMAS DE SUBFOROS
+   Fecha debajo del último usuario
+   ========================================== */
+
+/* Contenedor del último mensaje */
+.forabg .topiclist.topics:not(.search) dd.lastpost {
+  min-width: 0 !important;
+  text-align: left !important;
+}
+
+/* Nombre y fecha en líneas independientes */
+.forabg .topiclist.topics:not(.search) dd.lastpost > span {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 3px;
+  min-width: 0;
+}
+
+/* Nombre del último usuario */
+.forabg .topiclist.topics:not(.search) dd.lastpost a {
+  max-width: 100%;
+  text-align: left !important;
+}
+
+/* Fecha del último mensaje */
+.forabg .topiclist.topics:not(.search) dd.lastpost time,
+.forabg .topiclist.topics:not(.search) dd.lastpost .lastpost-date {
+  display: block !important;
+  position: static !important;
+  width: auto !important;
+  max-width: 100%;
+  margin: 0 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  color: var(--campus-muted) !important;
+  font-size: 10px !important;
+  line-height: 1.5;
+}
+
+/* ==========================================
    HUWD · MENCIONES DE USUARIOS
    Estilo limpio con color del autor
    ========================================== */
