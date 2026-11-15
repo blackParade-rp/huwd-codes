@@ -29,6 +29,62 @@ body#modernbb #notif_list
     color: var(--campus-text) !important;
 }
 
+/* ==========================================
+   HUWD · MENCIONES DE USUARIOS
+   Estilo limpio con color del autor
+   ========================================== */
+
+/* Menciones de Foroactivo */
+.campus-post-card a.mentiontag,
+.campus-post-card a.mention,
+.campus-post-card .mentiontag,
+.campus-post-card .mention {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  color: var(--campus-post-group, var(--season-primary)) !important;
+
+  font-family: var(--campus-mono-font, Consolas, monospace) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.4px;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+
+  transition: opacity 0.2s ease;
+}
+
+/* Quitar el fondo también al pasar el ratón */
+.campus-post-card a.mentiontag:hover,
+.campus-post-card a.mention:hover,
+.campus-post-card .mentiontag:hover,
+.campus-post-card .mention:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  color: var(--campus-post-group, var(--season-primary)) !important;
+
+  box-shadow: none !important;
+  text-decoration: none !important;
+  opacity: 0.75;
+}
+
+/* Mantener el mismo aspecto al pulsar o enfocar */
+.campus-post-card a.mentiontag:focus,
+.campus-post-card a.mention:focus,
+.campus-post-card a.mentiontag:active,
+.campus-post-card a.mention:active {
+  background: transparent !important;
+  color: var(--campus-post-group, var(--season-primary)) !important;
+  box-shadow: none !important;
+}
 
 /* ==================================================
    HUWD · RESULTADOS DE BÚSQUEDA
@@ -193,80 +249,111 @@ html[data-campus-theme="dark"] {
   text-shadow: none !important;
 }
 
-/* --------------------------------------------------
-   09. ADAPTACIÓN A MÓVILES
-   -------------------------------------------------- */
 
-@media (max-width: 700px) {
-
-  .forumbg:has(ul.topiclist) {
-    padding: 8px !important;
-    border-radius: 12px !important;
-  }
-
-  .forumbg:has(ul.topiclist) ul.topiclist li.row {
-    padding: 10px 6px !important;
-    border-radius: 9px !important;
-  }
-
-  .forumbg:has(ul.topiclist) ul.topiclist li.row .topictitle {
-    font-size: 11px !important;
-  }
-}
 
 /* ==========================================
-   HUWD · MENCIONES DE USUARIOS
-   Estilo limpio con color del autor
+   HUWD · MIS TEMAS Y RESULTADOS
+   Restauración del diseño de tarjetas
    ========================================== */
 
-/* Menciones de Foroactivo */
-.campus-post-card a.mentiontag,
-.campus-post-card a.mention,
-.campus-post-card .mentiontag,
-.campus-post-card .mention {
+/* Variables para ambos modos */
+:root {
+  --huwd-results-bg: rgba(255, 255, 255, 0.82);
+  --huwd-results-card: rgba(255, 255, 255, 0.92);
+  --huwd-results-hover: rgba(39, 116, 174, 0.08);
+}
+
+html[data-campus-theme="dark"] {
+  --huwd-results-bg: rgba(25, 27, 32, 0.88);
+  --huwd-results-card: rgba(32, 33, 38, 0.96);
+  --huwd-results-hover: rgba(255, 209, 0, 0.08);
+}
+
+/* Contenedor semitransparente */
+.forumbg {
+  background: var(--huwd-results-bg) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-radius: 16px !important;
+  padding: 14px !important;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Quitar el fondo original de la lista */
+.forumbg ul.topiclist {
   background: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-
-  color: var(--campus-post-group, var(--season-primary)) !important;
-
-  font-family: var(--campus-mono-font, Consolas, monospace) !important;
-  font-size: 10px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.4px;
-
   border: 0 !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  text-decoration: none !important;
-
-  transition: opacity 0.2s ease;
 }
 
-/* Quitar el fondo también al pasar el ratón */
-.campus-post-card a.mentiontag:hover,
-.campus-post-card a.mention:hover,
-.campus-post-card .mentiontag:hover,
-.campus-post-card .mention:hover {
+/* Cabecera */
+.forumbg ul.topiclist li.header {
   background: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-
-  color: var(--campus-post-group, var(--season-primary)) !important;
-
-  box-shadow: none !important;
-  text-decoration: none !important;
-  opacity: 0.75;
+  border: 0 !important;
+  border-bottom: 1px solid var(--campus-border) !important;
+  margin-bottom: 12px !important;
 }
 
-/* Mantener el mismo aspecto al pulsar o enfocar */
-.campus-post-card a.mentiontag:focus,
-.campus-post-card a.mention:focus,
-.campus-post-card a.mentiontag:active,
-.campus-post-card a.mention:active {
-  background: transparent !important;
-  color: var(--campus-post-group, var(--season-primary)) !important;
-  box-shadow: none !important;
+.forumbg ul.topiclist li.header dt,
+.forumbg ul.topiclist li.header dd,
+.forumbg ul.topiclist li.header a {
+  color: var(--campus-text) !important;
+  font-family: var(--campus-mono-font) !important;
+  font-size: 10px !important;
+  text-transform: uppercase;
+}
+
+/* Tarjetas individuales */
+.forumbg ul.topiclist li.row {
+  background: var(--huwd-results-card) !important;
+  border: 1px solid var(--campus-border) !important;
+  border-radius: 10px !important;
+  margin: 0 0 8px !important;
+  padding: 10px 8px !important;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.forumbg ul.topiclist li.row:hover {
+  background: var(--huwd-results-hover) !important;
+  border-color: var(--season-primary) !important;
+}
+
+.forumbg ul.topiclist li.row:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Textos */
+.forumbg ul.topiclist li.row,
+.forumbg ul.topiclist li.row dt,
+.forumbg ul.topiclist li.row dd {
+  color: var(--campus-muted) !important;
+}
+
+.forumbg ul.topiclist li.row .topictitle {
+  color: var(--campus-text) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+.forumbg ul.topiclist li.row .topictitle:hover {
+  color: var(--season-primary) !important;
+}
+
+/* Título de la página */
+#page-body > h1,
+#page-body > h2,
+#page-body .page-title {
+  color: var(--campus-text) !important;
+  text-shadow: none !important;
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 700px) {
+  .forumbg {
+    padding: 8px !important;
+  }
+
+  .forumbg ul.topiclist li.row {
+    padding: 10px 6px !important;
+  }
 }
