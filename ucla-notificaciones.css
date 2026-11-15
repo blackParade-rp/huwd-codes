@@ -213,3 +213,60 @@ html[data-campus-theme="dark"] {
     font-size: 11px !important;
   }
 }
+
+/* ==========================================
+   HUWD · MENCIONES DE USUARIOS
+   Estilo limpio con color del autor
+   ========================================== */
+
+/* Menciones de Foroactivo */
+.campus-post-card a.mentiontag,
+.campus-post-card a.mention,
+.campus-post-card .mentiontag,
+.campus-post-card .mention {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  color: var(--campus-post-group, var(--season-primary)) !important;
+
+  font-family: var(--campus-mono-font, Consolas, monospace) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.4px;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+
+  transition: opacity 0.2s ease;
+}
+
+/* Quitar el fondo también al pasar el ratón */
+.campus-post-card a.mentiontag:hover,
+.campus-post-card a.mention:hover,
+.campus-post-card .mentiontag:hover,
+.campus-post-card .mention:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  color: var(--campus-post-group, var(--season-primary)) !important;
+
+  box-shadow: none !important;
+  text-decoration: none !important;
+  opacity: 0.75;
+}
+
+/* Mantener el mismo aspecto al pulsar o enfocar */
+.campus-post-card a.mentiontag:focus,
+.campus-post-card a.mention:focus,
+.campus-post-card a.mentiontag:active,
+.campus-post-card a.mention:active {
+  background: transparent !important;
+  color: var(--campus-post-group, var(--season-primary)) !important;
+  box-shadow: none !important;
+}
