@@ -1273,3 +1273,41 @@
   flex-direction: column;
   gap: 12px;
 }
+
+
+/* ==========================================
+   HUWD · BAÚL / CRONOLOGÍA PERSONAL
+   Eliminar saltos de línea de Foroactivo
+   ========================================== */
+
+/* Ocultar saltos entre los meses */
+.huwd-trunk > br {
+  display: none !important;
+}
+
+/* Ocultar saltos entre los roles */
+.huwd-trunk__month > br {
+  display: none !important;
+}
+
+/* Evitar saltos dentro de cada rol */
+.huwd-trunk__role > br,
+.huwd-trunk__month-title > br {
+  display: none !important;
+}
+
+/* Evitar márgenes adicionales en los roles */
+.huwd-trunk__month > .huwd-trunk__role {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Mantener la separación original entre meses */
+.huwd-trunk > .huwd-trunk__month {
+  margin-top: 0;
+}
+
+/* Evitar que los saltos afecten a los enlaces */
+.huwd-trunk__role-link > br {
+  display: none !important;
+}
