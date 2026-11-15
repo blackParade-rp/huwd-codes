@@ -1315,3 +1315,12 @@
 .huwd-trunk__role-link > br {
   display: none !important;
 }
+
+/* ==========================================
+   HUWD · CRONOLOGÍA PERSONAL
+   Separación entre bloques de roles
+   ========================================== */
+
+.huwd-trunk__month > .huwd-trunk__role + .huwd-trunk__role {
+  margin-top: 2px !important;
+}
