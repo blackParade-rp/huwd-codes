@@ -86,66 +86,70 @@ body#modernbb #notif_list
   box-shadow: none !important;
 }
 
+
 /* ==================================================
-   HUWD · RESULTADOS DE BÚSQUEDA
-   Mis temas · Mis mensajes · Resultados
+   HUWD · MIS TEMAS Y RESULTADOS DE BÚSQUEDA
    Foroactivo ModernBB
    ================================================== */
 
 /* --------------------------------------------------
-   01. VARIABLES DEL DISEÑO
+   01. VARIABLES · MODO CLARO
    -------------------------------------------------- */
 
 :root {
-  --huwd-search-panel: rgba(255, 255, 255, 0.84);
-  --huwd-search-card: rgba(255, 255, 255, 0.92);
-  --huwd-search-hover: rgba(39, 116, 174, 0.08);
-}
-
-html[data-campus-theme="dark"] {
-  --huwd-search-panel: rgba(25, 27, 32, 0.84);
-  --huwd-search-card: rgba(32, 33, 38, 0.94);
-  --huwd-search-hover: rgba(255, 209, 0, 0.07);
+  --huwd-search-panel: rgba(255, 255, 255, 0.82);
+  --huwd-search-card: rgba(255, 255, 255, 0.90);
+  --huwd-search-hover: rgba(39, 116, 174, 0.09);
 }
 
 /* --------------------------------------------------
-   02. CONTENEDOR GENERAL SEMITRANSPARENTE
+   02. VARIABLES · MODO OSCURO
    -------------------------------------------------- */
 
-.forumbg:has(ul.topiclist) {
+html[data-campus-theme="dark"] {
+  --huwd-search-panel: rgba(21, 23, 27, 0.86);
+  --huwd-search-card: rgba(32, 33, 38, 0.92);
+  --huwd-search-hover: rgba(255, 209, 0, 0.08);
+}
+
+/* --------------------------------------------------
+   03. CONTENEDOR SEMITRANSPARENTE
+   -------------------------------------------------- */
+
+.forabg:has(.topiclist.topics.search) {
   background: var(--huwd-search-panel) !important;
   border: 1px solid var(--campus-border) !important;
   border-radius: 16px !important;
   padding: 14px !important;
   overflow: hidden;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* Evitar fondos heredados de ModernBB */
-.forumbg:has(ul.topiclist) ul.topiclist {
+/* Eliminar fondos heredados */
+.forabg:has(.topiclist.topics.search) .topiclist {
   background: transparent !important;
   border: 0 !important;
 }
 
 /* --------------------------------------------------
-   03. ENCABEZADO DE COLUMNAS
+   04. CABECERA DE COLUMNAS
    -------------------------------------------------- */
 
-.forumbg:has(ul.topiclist) ul.topiclist li.header {
+.forabg:has(.topiclist.topics.search) .topiclist .header {
   background: transparent !important;
   border: 0 !important;
   border-bottom: 1px solid var(--campus-border) !important;
-  margin-bottom: 12px;
+  margin-bottom: 12px !important;
   padding: 10px 12px !important;
 }
 
-.forumbg:has(ul.topiclist) ul.topiclist li.header dt,
-.forumbg:has(ul.topiclist) ul.topiclist li.header dd,
-.forumbg:has(ul.topiclist) ul.topiclist li.header a {
+.forabg:has(.topiclist.topics.search) .header dt,
+.forabg:has(.topiclist.topics.search) .header dd,
+.forabg:has(.topiclist.topics.search) .header a {
   color: var(--campus-muted) !important;
-  font-family: var(--campus-mono-font);
+  font-family: var(--campus-mono-font, monospace) !important;
   font-size: 10px !important;
   font-weight: 700 !important;
   letter-spacing: 0.5px;
@@ -153,13 +157,13 @@ html[data-campus-theme="dark"] {
 }
 
 /* --------------------------------------------------
-   04. CADA TEMA COMO TARJETA
+   05. TARJETAS INDIVIDUALES
    -------------------------------------------------- */
 
-.forumbg:has(ul.topiclist) ul.topiclist li.row {
+.forabg:has(.topiclist.topics.search) .topiclist li.row {
   background: var(--huwd-search-card) !important;
   border: 1px solid var(--campus-border) !important;
-  border-radius: 11px !important;
+  border-radius: 10px !important;
   margin: 0 0 8px !important;
   padding: 10px 8px !important;
   box-shadow: none !important;
@@ -169,191 +173,75 @@ html[data-campus-theme="dark"] {
     transform 0.2s ease;
 }
 
-.forumbg:has(ul.topiclist) ul.topiclist li.row:hover {
+.forabg:has(.topiclist.topics.search) .topiclist li.row:hover {
   background: var(--huwd-search-hover) !important;
   border-color: var(--season-primary) !important;
   transform: translateY(-1px);
 }
 
-.forumbg:has(ul.topiclist) ul.topiclist li.row:last-child {
+.forabg:has(.topiclist.topics.search) .topiclist li.row:last-child {
   margin-bottom: 0 !important;
 }
 
 /* --------------------------------------------------
-   05. TÍTULOS Y TEXTOS
+   06. TÍTULOS Y TEXTOS
    -------------------------------------------------- */
 
-.forumbg:has(ul.topiclist) ul.topiclist li.row .topictitle {
+.forabg:has(.topiclist.topics.search) .topictitle {
   color: var(--campus-text) !important;
-  font-family: var(--campus-body-font);
+  font-family: var(--campus-body-font, Verdana, sans-serif);
   font-size: 12px !important;
   font-weight: 700 !important;
   text-decoration: none !important;
 }
 
-.forumbg:has(ul.topiclist) ul.topiclist li.row .topictitle:hover {
+.forabg:has(.topiclist.topics.search) .topictitle:hover {
   color: var(--season-primary) !important;
 }
 
-.forumbg:has(ul.topiclist) ul.topiclist li.row dt,
-.forumbg:has(ul.topiclist) ul.topiclist li.row dd,
-.forumbg:has(ul.topiclist) ul.topiclist li.row span,
-.forumbg:has(ul.topiclist) ul.topiclist li.row small {
+.forabg:has(.topiclist.topics.search) li.row,
+.forabg:has(.topiclist.topics.search) li.row dt,
+.forabg:has(.topiclist.topics.search) li.row dd,
+.forabg:has(.topiclist.topics.search) li.row span:not([style]) {
   color: var(--campus-muted);
 }
 
-.forumbg:has(ul.topiclist) ul.topiclist li.row a {
+.forabg:has(.topiclist.topics.search) li.row a {
   text-decoration: none !important;
 }
 
-.forumbg:has(ul.topiclist) ul.topiclist li.row a:not(.topictitle):hover {
-  color: var(--season-primary);
-}
-
 /* --------------------------------------------------
-   06. ICONOS DE LOS TEMAS
+   07. RESPUESTAS Y VISITAS
    -------------------------------------------------- */
 
-.forumbg:has(ul.topiclist) ul.topiclist li.row .icon {
-  border-radius: 10px;
-}
-
-/* --------------------------------------------------
-   07. RESPUESTAS, VISITAS Y ÚLTIMO MENSAJE
-   -------------------------------------------------- */
-
-.forumbg:has(ul.topiclist) ul.topiclist li.row dd.posts,
-.forumbg:has(ul.topiclist) ul.topiclist li.row dd.views {
+.forabg:has(.topiclist.topics.search) dd.posts,
+.forabg:has(.topiclist.topics.search) dd.views {
   color: var(--campus-muted) !important;
-  font-family: var(--campus-mono-font);
+  font-family: var(--campus-mono-font, monospace);
   font-size: 11px !important;
 }
 
-.forumbg:has(ul.topiclist) ul.topiclist li.row dd.lastpost {
+/* --------------------------------------------------
+   08. ÚLTIMO MENSAJE
+   -------------------------------------------------- */
+
+.forabg:has(.topiclist.topics.search) dd.lastpost {
   color: var(--campus-muted) !important;
   font-size: 11px !important;
 }
 
-.forumbg:has(ul.topiclist) ul.topiclist li.row dd.lastpost a {
-  font-weight: 600;
+.forabg:has(.topiclist.topics.search) dd.lastpost a {
+  font-weight: 700;
 }
 
 /* --------------------------------------------------
-   08. TÍTULO DE LA PÁGINA
+   09. TÍTULO DE LA PÁGINA
    -------------------------------------------------- */
 
-#page-body > h1,
-#page-body > h2,
-#page-body .page-title {
+body:has(.topiclist.topics.search) #page-body h1,
+body:has(.topiclist.topics.search) #page-body h2,
+body:has(.topiclist.topics.search) #page-body .page-title {
   color: var(--campus-text) !important;
   text-shadow: none !important;
 }
 
-
-
-/* ==========================================
-   HUWD · MIS TEMAS Y RESULTADOS
-   Restauración del diseño de tarjetas
-   ========================================== */
-
-/* Variables para ambos modos */
-:root {
-  --huwd-results-bg: rgba(255, 255, 255, 0.82);
-  --huwd-results-card: rgba(255, 255, 255, 0.92);
-  --huwd-results-hover: rgba(39, 116, 174, 0.08);
-}
-
-html[data-campus-theme="dark"] {
-  --huwd-results-bg: rgba(25, 27, 32, 0.88);
-  --huwd-results-card: rgba(32, 33, 38, 0.96);
-  --huwd-results-hover: rgba(255, 209, 0, 0.08);
-}
-
-/* Contenedor semitransparente */
-.forumbg {
-  background: var(--huwd-results-bg) !important;
-  border: 1px solid var(--campus-border) !important;
-  border-radius: 16px !important;
-  padding: 14px !important;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* Quitar el fondo original de la lista */
-.forumbg ul.topiclist {
-  background: transparent !important;
-  border: 0 !important;
-}
-
-/* Cabecera */
-.forumbg ul.topiclist li.header {
-  background: transparent !important;
-  border: 0 !important;
-  border-bottom: 1px solid var(--campus-border) !important;
-  margin-bottom: 12px !important;
-}
-
-.forumbg ul.topiclist li.header dt,
-.forumbg ul.topiclist li.header dd,
-.forumbg ul.topiclist li.header a {
-  color: var(--campus-text) !important;
-  font-family: var(--campus-mono-font) !important;
-  font-size: 10px !important;
-  text-transform: uppercase;
-}
-
-/* Tarjetas individuales */
-.forumbg ul.topiclist li.row {
-  background: var(--huwd-results-card) !important;
-  border: 1px solid var(--campus-border) !important;
-  border-radius: 10px !important;
-  margin: 0 0 8px !important;
-  padding: 10px 8px !important;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.forumbg ul.topiclist li.row:hover {
-  background: var(--huwd-results-hover) !important;
-  border-color: var(--season-primary) !important;
-}
-
-.forumbg ul.topiclist li.row:last-child {
-  margin-bottom: 0 !important;
-}
-
-/* Textos */
-.forumbg ul.topiclist li.row,
-.forumbg ul.topiclist li.row dt,
-.forumbg ul.topiclist li.row dd {
-  color: var(--campus-muted) !important;
-}
-
-.forumbg ul.topiclist li.row .topictitle {
-  color: var(--campus-text) !important;
-  font-weight: 700 !important;
-  text-decoration: none !important;
-}
-
-.forumbg ul.topiclist li.row .topictitle:hover {
-  color: var(--season-primary) !important;
-}
-
-/* Título de la página */
-#page-body > h1,
-#page-body > h2,
-#page-body .page-title {
-  color: var(--campus-text) !important;
-  text-shadow: none !important;
-}
-
-/* Pantallas pequeñas */
-@media (max-width: 700px) {
-  .forumbg {
-    padding: 8px !important;
-  }
-
-  .forumbg ul.topiclist li.row {
-    padding: 10px 6px !important;
-  }
-}
