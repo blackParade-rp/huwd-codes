@@ -155,17 +155,3 @@ html[data-campus-theme="dark"] body:has(.forumbg .topiclist) .forumbg .topiclist
 html[data-campus-theme="dark"] body:has(.forumbg .topiclist) .forumbg .topiclist .header dd {
   color: var(--campus-contrast, #191919);
 }
-
-/* ------------------------------------------
-   08. ADAPTACIÓN A MÓVILES
-   ------------------------------------------ */
-
-@media (max-width: 700px) {
-  body:has(.forumbg .topiclist) .forumbg .topiclist .row {
-    padding: 10px 6px;
-  }
-
-  body:has(.forumbg .topiclist) .forumbg .topiclist .topictitle {
-    font-size: 11px;
-  }
-}
