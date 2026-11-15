@@ -1316,11 +1316,24 @@
   display: none !important;
 }
 
+
 /* ==========================================
    HUWD · CRONOLOGÍA PERSONAL
-   Separación entre bloques de roles
+   Separación visible entre roles
    ========================================== */
 
+/* Separación de 3 px entre bloques consecutivos */
 .huwd-trunk__month > .huwd-trunk__role + .huwd-trunk__role {
-  margin-top: 2px !important;
+  margin-top: 3px !important;
+}
+
+/* Evitar que otras reglas anulen la separación */
+.huwd-trunk__month > .huwd-trunk__role {
+  margin-bottom: 0 !important;
+  position: relative;
+}
+
+/* Mantener ocultos los saltos de Foroactivo */
+.huwd-trunk__month > br {
+  display: none !important;
 }
