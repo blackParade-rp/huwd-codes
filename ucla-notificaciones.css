@@ -399,3 +399,32 @@ body:has(.topiclist.topics.search) #page-body .page-title {
   background: transparent !important;
   text-decoration: none !important;
 }
+
+
+/* ==========================================
+   HUWD · ÚLTIMOS CONECTADOS
+   Tipografía uniforme para todos los usuarios
+   ========================================== */
+
+/* Usuarios con grupo y sin grupo */
+body#modernbb .campus-community-recent a,
+body#modernbb .campus-community-recent a *,
+body#modernbb .campus-community-recent .usr_grp_clr,
+body#modernbb .campus-community-recent .usr_grp_clr * {
+  font-family: var(--campus-mono-font, Consolas, monospace) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+/* Sin fondos ni decoraciones adicionales */
+body#modernbb .campus-community-recent a,
+body#modernbb .campus-community-recent a:hover {
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
