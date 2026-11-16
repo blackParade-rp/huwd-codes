@@ -286,3 +286,33 @@ body:has(.topiclist.topics.search) #page-body .page-title {
   text-shadow: none !important;
 }
 
+
+/* ==========================================
+   HUWD · NOTIFICACIONES
+   Evitar desplazamiento al cerrar avisos
+   ========================================== */
+
+/* Anclar el desplegable a la parte superior */
+#notif_list,
+#notif_list_menu,
+#notif_unread,
+#notif_unread_list {
+  top: 100% !important;
+  bottom: auto !important;
+  transform: none !important;
+}
+
+/* Mantener la lista dentro de la pantalla */
+#notif_list,
+#notif_list_menu {
+  max-height: calc(100vh - 110px) !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}
+
+/* Evitar desplazamientos provocados por el anclaje del scroll */
+#notif_list,
+#notif_list_menu,
+#notif_unread_list {
+  overflow-anchor: none;
+}
