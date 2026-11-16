@@ -289,50 +289,64 @@ body:has(.topiclist.topics.search) #page-body .page-title {
 
 /* ==========================================
    HUWD · NOTIFICACIONES
-   Evitar desplazamiento al cerrar avisos
+   Posición estable al eliminar avisos
    ========================================== */
 
-/* Anclar el desplegable a la parte superior */
-#notif_list,
-#notif_list_menu,
-#notif_unread,
-#notif_unread_list {
-  top: 100% !important;
+/* Mantener el desplegable anclado a la barra */
+#notif_list {
+  position: fixed !important;
+
+  top: 52px !important;
   bottom: auto !important;
+
   transform: none !important;
-}
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 
-/* Mantener la lista dentro de la pantalla */
-#notif_list,
-#notif_list_menu {
-  max-height: calc(100vh - 110px) !important;
+  max-height: calc(100dvh - 62px) !important;
   overflow-y: auto !important;
-  overscroll-behavior: contain;
-}
 
-/* Evitar desplazamientos provocados por el anclaje del scroll */
-#notif_list,
-#notif_list_menu,
-#notif_unread_list {
+  overscroll-behavior: contain;
   overflow-anchor: none;
 }
 
-/* ==========================================
-   HUWD · ÚLTIMOS CONECTADOS
-   Fuente de acento Bright Holiday
-   ========================================== */
-
-#lastvisit,
-#lastvisit a,
-#lastvisit strong,
-#lastvisit span {
-  font-family: var(--campus-accent-font, "Bright Holiday", cursive) !important;
+/* Evitar que la lista herede desplazamientos */
+#notif_list > li {
+  position: relative;
 }
 
-/* Ajustar tamaño y separación */
-#lastvisit a {
+/* Mantener el panel dentro de la pantalla */
+@media (max-width: 700px) {
+  #notif_list {
+    max-height: calc(100dvh - 62px) !important;
+  }
+}
+
+
+/* ==========================================
+   HUWD · ÚLTIMOS CONECTADOS
+   Tipografía de acento Bright Holiday
+   ========================================== */
+
+/* Nombres de los usuarios conectados recientemente */
+.campus-community-recent a,
+.campus-community-recent a span,
+.campus-community-recent a strong {
+  font-family: var(--campus-accent-font, "Bright Holiday", cursive) !important;
   font-size: 22px !important;
   font-weight: 400 !important;
   line-height: 1.5 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+/* Conservar los colores de los grupos */
+.campus-community-recent a span.usr_grp_clr {
+  color: inherit;
+}
+
+/* Evitar subrayados */
+.campus-community-recent a {
   text-decoration: none !important;
 }
+
