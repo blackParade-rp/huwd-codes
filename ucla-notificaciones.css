@@ -355,3 +355,31 @@ body:has(.topiclist.topics.search) #page-body .page-title {
 .campus-community-recent .usr_grp_clr {
   background: transparent !important;
 }
+
+/* ==========================================
+   HUWD · ÚLTIMOS CONECTADOS
+   Corregir nombres sin grupo asignado
+   ========================================== */
+
+/* Aplicar la fuente a todos los elementos del listado */
+.campus-community-recent,
+.campus-community-recent *,
+.campus-community-recent a,
+.campus-community-recent a *,
+.campus-community-recent strong,
+.campus-community-recent span {
+  font-family: var(--campus-mono-font, Consolas, monospace) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
+}
+
+/* Conservar los colores individuales de los usuarios */
+.campus-community-recent a,
+.campus-community-recent a:hover {
+  background: transparent !important;
+  text-decoration: none !important;
+}
