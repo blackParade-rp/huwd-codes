@@ -412,7 +412,7 @@ body#modernbb .campus-community-recent a *,
 body#modernbb .campus-community-recent .usr_grp_clr,
 body#modernbb .campus-community-recent .usr_grp_clr * {
   font-family: var(--campus-mono-font, Consolas, monospace) !important;
-  font-size: 11px !important;
+  font-size: 13px !important;
   font-weight: 700 !important;
   font-style: normal !important;
   line-height: 1.8 !important;
