@@ -356,18 +356,19 @@ body:has(.topiclist.topics.search) #page-body .page-title {
   background: transparent !important;
 }
 
+
 /* ==========================================
    HUWD · ÚLTIMOS CONECTADOS
-   Corregir nombres sin grupo asignado
+   Todos los usuarios en monospace uppercase
    ========================================== */
 
-/* Aplicar la fuente a todos los elementos del listado */
-.campus-community-recent,
-.campus-community-recent *,
+/* Enlaces de usuarios, tengan grupo o no */
+.campus-community-grid .campus-community-panel
 .campus-community-recent a,
-.campus-community-recent a *,
-.campus-community-recent strong,
-.campus-community-recent span {
+.campus-community-grid .campus-community-panel
+.campus-community-recent a:not([class]),
+.campus-community-grid .campus-community-panel
+.campus-community-recent a[class] {
   font-family: var(--campus-mono-font, Consolas, monospace) !important;
   font-size: 11px !important;
   font-weight: 700 !important;
@@ -375,9 +376,24 @@ body:has(.topiclist.topics.search) #page-body .page-title {
   line-height: 1.8 !important;
   letter-spacing: 0.4px !important;
   text-transform: uppercase !important;
+  text-decoration: none !important;
 }
 
-/* Conservar los colores individuales de los usuarios */
+/* Elementos interiores y colores de grupo */
+.campus-community-grid .campus-community-panel
+.campus-community-recent a span,
+.campus-community-grid .campus-community-panel
+.campus-community-recent a strong,
+.campus-community-grid .campus-community-panel
+.campus-community-recent .usr_grp_clr {
+  font-family: var(--campus-mono-font, Consolas, monospace) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  text-transform: uppercase !important;
+}
+
+/* Mantener los colores de usuario originales */
 .campus-community-recent a,
 .campus-community-recent a:hover {
   background: transparent !important;
