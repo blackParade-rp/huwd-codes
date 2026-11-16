@@ -323,30 +323,35 @@ body:has(.topiclist.topics.search) #page-body .page-title {
 }
 
 
+
 /* ==========================================
    HUWD · ÚLTIMOS CONECTADOS
-   Tipografía de acento Bright Holiday
+   Monospace · Uppercase · Colores de grupo
    ========================================== */
 
-/* Nombres de los usuarios conectados recientemente */
+/* Todos los nombres, con o sin grupo */
 .campus-community-recent a,
-.campus-community-recent a span,
-.campus-community-recent a strong {
-  font-family: var(--campus-accent-font, "Bright Holiday", cursive) !important;
-  font-size: 22px !important;
-  font-weight: 400 !important;
-  line-height: 1.5 !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
-}
-
-/* Conservar los colores de los grupos */
-.campus-community-recent a span.usr_grp_clr {
-  color: inherit;
-}
-
-/* Evitar subrayados */
-.campus-community-recent a {
+.campus-community-recent a *,
+.campus-community-recent .usr_grp_clr,
+.campus-community-recent .usr_grp_clr * {
+  font-family: var(--campus-mono-font, Consolas, monospace) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
   text-decoration: none !important;
 }
 
+/* Evitar fondos y decoraciones al pasar el ratón */
+.campus-community-recent a,
+.campus-community-recent a:hover {
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
+/* Mantener los colores originales de cada grupo */
+.campus-community-recent .usr_grp_clr {
+  background: transparent !important;
+}
