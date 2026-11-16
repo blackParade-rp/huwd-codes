@@ -316,3 +316,23 @@ body:has(.topiclist.topics.search) #page-body .page-title {
 #notif_unread_list {
   overflow-anchor: none;
 }
+
+/* ==========================================
+   HUWD · ÚLTIMOS CONECTADOS
+   Fuente de acento Bright Holiday
+   ========================================== */
+
+#lastvisit,
+#lastvisit a,
+#lastvisit strong,
+#lastvisit span {
+  font-family: var(--campus-accent-font, "Bright Holiday", cursive) !important;
+}
+
+/* Ajustar tamaño y separación */
+#lastvisit a {
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  text-decoration: none !important;
+}
