@@ -428,3 +428,41 @@ body#modernbb .campus-community-recent a:hover {
   text-decoration: none !important;
 }
 
+/* ==========================================
+   HUWD · MEMBERLIST
+   Recuperar botón de búsqueda y ordenación
+   ========================================== */
+
+/* Asegurar que los botones del formulario sean visibles */
+body#modernbb #page-body form[action*="memberlist"] input[type="submit"],
+body#modernbb #page-body form[action*="memberlist"] button[type="submit"] {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  width: auto !important;
+  height: auto !important;
+  min-height: 36px;
+
+  padding: 9px 16px !important;
+  margin: 0 !important;
+
+  background: var(--season-primary) !important;
+  color: var(--campus-contrast) !important;
+  border: 0 !important;
+  border-radius: 7px !important;
+
+  font-family: var(--campus-mono-font, Consolas, monospace) !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+
+  cursor: pointer;
+}
+
+/* Efecto al pasar el ratón */
+body#modernbb #page-body form[action*="memberlist"] input[type="submit"]:hover,
+body#modernbb #page-body form[action*="memberlist"] button[type="submit"]:hover {
+  filter: brightness(1.1);
+}
+
