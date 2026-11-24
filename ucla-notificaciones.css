@@ -466,3 +466,22 @@ body#modernbb #page-body form[action*="memberlist"] button[type="submit"]:hover 
   filter: brightness(1.1);
 }
 
+
+/* ==========================================
+   HUWD · BIENVENIDA AL CAMPUS
+   Avatar del último usuario registrado
+   ========================================== */
+
+body#modernbb .campus-community-newest-avatar {
+    overflow: hidden;
+}
+
+body#modernbb .campus-community-newest-avatar img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center;
+    border-radius: inherit;
+}
+
