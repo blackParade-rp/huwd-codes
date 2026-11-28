@@ -1635,3 +1635,31 @@
 }
 
 
+/* --------------------------------------------------
+   02. ICONOS DE MEDALLAS Y PREMIOS
+   -------------------------------------------------- */
+
+.huwd-post-actions > .huwd-rewards {
+    --reward-accent: var(
+        --campus-post-group,
+        var(--season-primary)
+    );
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* ==================================================
+   HUWD · COMPATIBILIDAD CON TABLILLAS DE MEDALLAS
+   Evitar conflictos con los desplegables del post
+   ================================================== */
+
+body#modernbb .huwd-rewards:not(.huwd-post-actions > .huwd-rewards) {
+    display: block !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
