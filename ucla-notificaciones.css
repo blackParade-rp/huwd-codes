@@ -741,3 +741,43 @@ body#modernbb .huwd-rewards__sticker {
     display: none !important;
 }
 
+/* ==========================================
+   HUWD · MEDALLAS Y PREMIOS
+   Integración con la cabecera del mensaje
+   ========================================== */
+
+/* Eliminar el recuadro de fondo */
+body#modernbb .campus-post-card .huwd-rewards,
+body#modernbb .campus-post-card .huwd-post-actions {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Distribución de los iconos */
+body#modernbb .campus-post-card .huwd-rewards {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 10px !important;
+    min-height: 0 !important;
+}
+
+/* Iconos sin fondo, incluso al pasar el ratón */
+body#modernbb .huwd-rewards__button,
+body#modernbb .huwd-rewards__button:hover,
+body#modernbb .huwd-rewards__button[aria-expanded="true"] {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: var(--campus-post-ink, #fff) !important;
+}
+
+/* Efecto hover discreto */
+body#modernbb .huwd-rewards__button:hover {
+    opacity: .75;
+}
+
