@@ -485,3 +485,259 @@ body#modernbb .campus-community-newest-avatar img {
     border-radius: inherit;
 }
 
+/* ==================================================
+   HUWD · MEDALLAS Y PREMIOS COLECCIONABLES
+   ================================================== */
+
+/* --------------------------------------------------
+   01. CONTENEDOR DE ACCIONES DEL MENSAJE
+   -------------------------------------------------- */
+
+.campus-post-card .huwd-post-actions {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.campus-post-card .huwd-post-actions .profile-icons {
+    margin: 0 !important;
+}
+
+/* --------------------------------------------------
+   02. ICONOS DE MEDALLAS Y PREMIOS
+   -------------------------------------------------- */
+
+.huwd-rewards {
+    --reward-accent: var(
+        --campus-post-group,
+        var(--season-primary)
+    );
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+body#modernbb .huwd-rewards__button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    margin: 0;
+
+    background: transparent !important;
+    color: var(--campus-post-ink, #fff) !important;
+
+    border: 0 !important;
+    border-radius: 5px;
+    box-shadow: none !important;
+
+    font-size: 17px;
+    cursor: pointer;
+
+    transition: background .2s ease,
+                transform .2s ease;
+}
+
+body#modernbb .huwd-rewards__button:hover,
+body#modernbb .huwd-rewards__button[aria-expanded="true"] {
+    background: rgba(255,255,255,.15) !important;
+    transform: translateY(-1px);
+}
+
+/* --------------------------------------------------
+   03. DESPLEGABLES
+   -------------------------------------------------- */
+
+.huwd-rewards__panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 260px;
+    max-width: calc(100vw - 32px);
+    padding: 14px;
+    box-sizing: border-box;
+
+    background: var(--campus-surface);
+    color: var(--campus-text);
+
+    border: 1px solid var(--reward-accent);
+    border-radius: 10px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.20);
+    z-index: 100;
+}
+
+.huwd-rewards__panel[hidden] {
+    display: none !important;
+}
+
+/* --------------------------------------------------
+   04. CABECERA DEL DESPLEGABLE
+   -------------------------------------------------- */
+
+.huwd-rewards__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+
+    border-bottom: 1px solid var(--campus-border);
+
+    color: var(--reward-accent);
+    font-family: var(--campus-mono-font);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+body#modernbb .huwd-rewards__close {
+    background: transparent !important;
+    color: var(--campus-muted) !important;
+    border: 0 !important;
+    padding: 0;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* --------------------------------------------------
+   05. DISTRIBUCIÓN DE LOS STICKERS
+   -------------------------------------------------- */
+
+.huwd-rewards__collection,
+.huwd-rewards__collection .dd_award {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center;
+    justify-content: flex-start !important;
+    gap: 10px;
+
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    float: none !important;
+}
+
+/* --------------------------------------------------
+   06. MEDALLAS NATIVAS DE FOROACTIVO
+   -------------------------------------------------- */
+
+body#modernbb .huwd-rewards__collection .award {
+    position: relative;
+
+    width: 45px !important;
+    height: 45px !important;
+    flex: 0 0 45px;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background-color: transparent !important;
+    background-image: var(--award-image) !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    cursor: help;
+}
+
+/* --------------------------------------------------
+   07. DESCRIPCIÓN DE LAS MEDALLAS
+   -------------------------------------------------- */
+
+body#modernbb .huwd-rewards .award_tooltiptext {
+    background: var(--campus-surface) !important;
+    color: var(--campus-text) !important;
+
+    border: 1px solid var(--campus-border) !important;
+    border-radius: 8px;
+
+    font-family: var(--campus-body-font);
+    font-size: 10px;
+    line-height: 1.6;
+    text-transform: none;
+
+    z-index: 110;
+}
+
+body#modernbb .huwd-rewards .award_tooltiptext_title {
+    color: var(--reward-accent) !important;
+    font-family: var(--campus-mono-font);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------
+   08. PREMIOS COMPRADOS
+   -------------------------------------------------- */
+
+body#modernbb .huwd-rewards__sticker {
+    display: block !important;
+
+    width: 45px !important;
+    height: 45px !important;
+    flex: 0 0 45px;
+
+    object-fit: contain;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: transparent !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+/* --------------------------------------------------
+   09. COLECCIONES VACÍAS
+   -------------------------------------------------- */
+
+.huwd-rewards__empty {
+    width: 100%;
+    padding: 8px 0;
+
+    color: var(--campus-muted);
+    font-family: var(--campus-mono-font);
+    font-size: 10px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* --------------------------------------------------
+   10. LIMPIEZA DEL RANGO DEL AVATAR
+   -------------------------------------------------- */
+
+.campus-avatar-rank .award_more:empty {
+    display: none !important;
+}
+
+.campus-avatar-rank > br:last-child {
+    display: none !important;
+}
+
