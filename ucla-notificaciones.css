@@ -586,7 +586,7 @@ body#modernbb .huwd-rewards__button[aria-expanded="true"] {
    04. CABECERA DEL DESPLEGABLE
    -------------------------------------------------- */
 
-.huwd-rewards__heading {
+.huwd-post-actions .huwd-rewards__heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -747,7 +747,7 @@ body#modernbb .huwd-rewards__sticker {
    ========================================== */
 
 /* Eliminar el recuadro de fondo */
-body#modernbb .campus-post-card .huwd-rewards,
+body#modernbb .campus-post-card .huwd-post-actions > .huwd-rewards,
 body#modernbb .campus-post-card .huwd-post-actions {
     background: transparent !important;
     border: 0 !important;
@@ -758,7 +758,7 @@ body#modernbb .campus-post-card .huwd-post-actions {
 }
 
 /* Distribución de los iconos */
-body#modernbb .campus-post-card .huwd-rewards {
+body#modernbb .campus-post-card .huwd-post-actions > .huwd-rewards {
     display: flex !important;
     justify-content: flex-end !important;
     align-items: center !important;
